@@ -1,0 +1,13 @@
+<section class="pt-7 flex justify-center gap-2">
+  <div
+    *ngFor="let step of steps"
+    class="border font-bold text-primary-light-blue rounded-full w-8 h-8 flex justify-center items-center"
+    [ngClass]="{
+      'bg-primary-light-blue': currentStep === step,
+      'text-primary-marine': currentStep === step,
+      'border-none': currentStep === step
+    }"
+  >
+    {{ step }}
+  </div>
+</section>

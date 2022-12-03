@@ -1,1 +1,29 @@
 <app-stepper></app-stepper>
+<form class="absolute top-24 rounded-lg bg-neutral-white py-8 px-6 mx-5">
+  <div>
+    <h2 class="text-2xl font-bold">Personal Info</h2>
+    <p class="text-neutral-cool-gray">
+      Please provide your name, email address, and phone number.
+    </p>
+    <div class="flex flex-col gap-1 text-xs mt-3">
+      <label>Name </label>
+      <input
+        class="border text-neutral-light-gray p-2 rounded-sm"
+        type="text"
+        placeholder="e.g. Stephen King"
+      />
+      <label class="mt-2">Email Address </label>
+      <input
+        class="border text-neutral-light-gray p-2 rounded-sm"
+        type="email"
+        placeholder="e.g. stephenking@lorem.com"
+      />
+      <label class="mt-2">Phone Number </label>
+      <input
+        class="border text-neutral-light-gray p-2 rounded-sm"
+        type="number"
+        placeholder="e.g. +1 234 567 890"
+      />
+    </div>
+  </div>
+</form>

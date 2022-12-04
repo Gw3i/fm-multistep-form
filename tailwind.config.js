@@ -21,6 +21,10 @@ module.exports = {
     content: {
       link: 'url("assets/images/icon-checkmark.svg")',
     },
+    screens: {
+      xs: "375px",
+      xl: "1440px",
+    },
   },
   plugins: [],
 };

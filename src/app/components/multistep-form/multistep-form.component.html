@@ -1,4 +1,4 @@
-<div>
+<div class="xl:flex xl:justify-center">
   <picture class="absolute -z-[1] top-0 left-0 xl:hidden">
     <img
       src="assets/images/bg-sidebar-mobile.svg"
@@ -8,17 +8,18 @@
   </picture>
   <app-stepper class="xl:hidden"></app-stepper>
   <form
-    class="absolute top-24 rounded-lg bg-neutral-white py-8 px-5 mx-5 xl:flex"
+    class="absolute top-24 rounded-lg bg-neutral-white py-8 px-5 mx-5 xl:flex xl:w-[65%] xl:p-7"
   >
-    <app-stepper class="xs:hidden xl:block absolute"></app-stepper>
+    <app-stepper class="xs:hidden xl:block absolute xl:ml-8"></app-stepper>
     <picture class="xs:hidden xl:block">
       <img
         src="assets/images/bg-sidebar-desktop.svg"
         alt="background image"
         width="100%"
+        class="rounded-lg"
       />
     </picture>
-    <div *ngIf="currentStep === 1">
+    <div *ngIf="currentStep === 1" class="xl:mx-auto xl:mt-10">
       <h2 class="text-2xl font-bold">Personal Info</h2>
       <p class="text-neutral-cool-gray">
         Please provide your name, email address, and phone number.

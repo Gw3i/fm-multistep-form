@@ -20,12 +20,12 @@ import { MultistepFormService } from '../multistep-form/multistep-form.service';
 export class StepperComponent implements OnInit {
   steps: number[] | null = null;
 
-  @Input()
   currentStep: number | null = null;
 
   constructor(private _multistepFormService: MultistepFormService) {}
 
   ngOnInit(): void {
     this.steps = this._multistepFormService.steps;
+    this.currentStep = this._multistepFormService.currentStep;
   }
 }

@@ -18,6 +18,9 @@ module.exports = {
         white: "hsl(0, 0%, 100%)",
       },
     },
+    content: {
+      link: 'url("assets/images/icon-checkmark.svg")',
+    },
   },
   plugins: [],
 };

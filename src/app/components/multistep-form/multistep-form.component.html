@@ -48,44 +48,44 @@
 
     <!-- Step 2 -->
 
-    <div *ngIf="currentStep === 2">
-      <h2 class="text-2xl font-bold">Select your plan</h2>
-      <p class="text-neutral-cool-gray mb-3">
+    <div *ngIf="currentStep === 2" class="xl:mx-auto xl:mt-10">
+      <h2 class="text-2xl font-bold xl:mb-2">Select your plan</h2>
+      <p class="text-neutral-cool-gray mb-3 xl:mb-7">
         You have the option of monthly or yearly billing.
       </p>
 
-      <div class="flex flex-col gap-3">
+      <div class="flex flex-col gap-3 xl:flex-row">
         <label
-          class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg"
+          class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg xl:flex-col xl:items-start xl:gap-0 xl:w-32"
           for="arcade"
         >
           <input type="radio" id="arcade" class="-ml-3 appearance-none" />
           <img src="assets/images/icon-arcade.svg" alt="" />
-          <div>
+          <div class="xl:mt-9">
             <h4>Arcade</h4>
             <p class="text-neutral-cool-gray text-sm">$9/mo</p>
           </div>
         </label>
 
         <label
-          class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg"
+          class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg xl:flex-col xl:items-start xl:gap-0 xl:w-32"
           for="arcade"
         >
           <input type="radio" id="advanced" class="-ml-3 appearance-none" />
           <img src="assets/images/icon-advanced.svg" alt="" />
-          <div>
+          <div class="xl:mt-9">
             <h4>Advanced</h4>
             <p class="text-neutral-cool-gray text-sm">$12/mo</p>
           </div>
         </label>
 
         <label
-          class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg"
+          class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg xl:flex-col xl:items-start xl:gap-0 xl:w-32"
           for="arcade"
         >
           <input type="radio" id="pro" class="-ml-3 appearance-none" />
           <img src="assets/images/icon-pro.svg" alt="" />
-          <div>
+          <div class="xl:mt-9">
             <h4>Pro</h4>
             <p class="text-neutral-cool-gray text-sm">$15/mo</p>
           </div>
@@ -93,7 +93,7 @@
       </div>
 
       <div
-        class="flex gap-5 justify-center mt-5 bg-neutral-magnolia py-3 rounded-lg font-medium text-sm"
+        class="flex gap-5 justify-center mt-5 bg-neutral-magnolia py-3 rounded-lg font-medium text-sm xl:mt-10"
       >
         <p>Monthly</p>
         <label class="inline-flex relative items-center cursor-pointer">
@@ -108,7 +108,7 @@
 
     <!-- Step 3 -->
 
-    <div *ngIf="currentStep === 3">
+    <div *ngIf="currentStep === 3" class="xl:mx-auto xl:mt-10">
       <h2 class="text-2xl font-bold">Pick add-ons</h2>
       <p class="text-neutral-cool-gray mb-3">
         Add-ons help enhance your gaming experience.
@@ -184,7 +184,7 @@
     </div>
 
     <!-- Summary -->
-    <div *ngIf="currentStep === 4">
+    <div *ngIf="currentStep === 4" class="xl:mx-auto xl:mt-10">
       <h2 class="text-2xl font-bold">Finishing up</h2>
       <p class="text-neutral-cool-gray mb-3">
         Double-check everything looks OK before confirming.
@@ -221,7 +221,7 @@
 
     <!-- Thank you -->
     <div
-      class="flex flex-col items-center text-center"
+      class="flex flex-col items-center text-center xl:mx-auto xl:mt-10"
       *ngIf="currentStep === 5"
     >
       <img class="w-14 mb-4" src="assets/images/icon-thank-you.svg" alt="" />

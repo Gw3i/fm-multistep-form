@@ -108,7 +108,7 @@
 
     <!-- Step 3 -->
 
-    <div *ngIf="currentStep === 3" class="xl:mx-auto xl:mt-10 xl:w-[400px]">
+    <div *ngIf="currentStep === 3" class="xl:mx-auto xl:mt-10 xl:w-[450px]">
       <h2 class="text-2xl font-bold xl:mb-2">Pick add-ons</h2>
       <p class="text-neutral-cool-gray mb-3 xl:mb-7">
         Add-ons help enhance your gaming experience.
@@ -185,8 +185,8 @@
 
     <!-- Summary -->
     <div *ngIf="currentStep === 4" class="xl:mx-auto xl:mt-10">
-      <h2 class="text-2xl font-bold">Finishing up</h2>
-      <p class="text-neutral-cool-gray mb-3">
+      <h2 class="text-2xl font-bold xl:mb-2">Finishing up</h2>
+      <p class="text-neutral-cool-gray mb-3 xl:mb-7">
         Double-check everything looks OK before confirming.
       </p>
 
@@ -221,11 +221,15 @@
 
     <!-- Thank you -->
     <div
-      class="flex flex-col items-center text-center xl:mx-auto xl:mt-10"
+      class="flex flex-col items-center text-center xl:mx-auto xl:my-auto xl:w-[450px]"
       *ngIf="currentStep === 5"
     >
-      <img class="w-14 mb-4" src="assets/images/icon-thank-you.svg" alt="" />
-      <h2 class="text-2xl font-bold mb-2">Thank you!</h2>
+      <img
+        class="w-14 mb-4 xl:w-[88px] xl:mb-8"
+        src="assets/images/icon-thank-you.svg"
+        alt=""
+      />
+      <h2 class="text-2xl font-bold mb-2 xl:text-4xl">Thank you!</h2>
       <p class="text-neutral-cool-gray mb-3">
         Thanks for confirming your subscription! We hope you have fun using our
         platform. If you ever need support, please feel free to email us at

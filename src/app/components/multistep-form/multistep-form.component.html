@@ -10,7 +10,10 @@
   <form
     class="absolute top-24 rounded-lg bg-neutral-white py-8 px-5 mx-5 xl:flex xl:w-[65%] xl:p-7"
   >
-    <app-stepper class="xs:hidden xl:block absolute xl:ml-8"></app-stepper>
+    <app-stepper
+      [currentStep]="currentStep"
+      class="xs:hidden xl:block absolute xl:ml-8"
+    ></app-stepper>
     <picture class="xs:hidden xl:block">
       <img
         src="assets/images/bg-sidebar-desktop.svg"
@@ -19,227 +22,265 @@
         class="rounded-lg"
       />
     </picture>
-    <div *ngIf="currentStep === 1" class="xl:mx-auto xl:mt-10">
-      <h2 class="text-2xl font-bold">Personal Info</h2>
-      <p class="text-neutral-cool-gray">
-        Please provide your name, email address, and phone number.
-      </p>
-      <div class="flex flex-col gap-1 text-xs mt-3">
-        <label>Name </label>
-        <input
-          class="border text-neutral-light-gray p-2 rounded-sm placeholder:font-medium"
-          type="text"
-          placeholder="e.g. Stephen King"
-        />
-        <label class="mt-2">Email Address </label>
-        <input
-          class="border text-neutral-light-gray p-2 rounded-sm placeholder:font-medium"
-          type="email"
-          placeholder="e.g. stephenking@lorem.com"
-        />
-        <label class="mt-2">Phone Number </label>
-        <input
-          class="border text-neutral-light-gray p-2 rounded-sm placeholder:font-medium"
-          type="number"
-          placeholder="e.g. +1 234 567 890"
-        />
+    <div class="xl:mx-auto xl:mt-10 xl:max-w-[420px]">
+      <div *ngIf="currentStep === 1">
+        <h2 class="text-2xl font-bold">Personal Info</h2>
+        <p class="text-neutral-cool-gray">
+          Please provide your name, email address, and phone number.
+        </p>
+        <div class="flex flex-col gap-1 text-xs mt-3">
+          <label>Name </label>
+          <input
+            class="border text-neutral-light-gray p-2 rounded-sm placeholder:font-medium"
+            type="text"
+            placeholder="e.g. Stephen King"
+          />
+          <label class="mt-2">Email Address </label>
+          <input
+            class="border text-neutral-light-gray p-2 rounded-sm placeholder:font-medium"
+            type="email"
+            placeholder="e.g. stephenking@lorem.com"
+          />
+          <label class="mt-2">Phone Number </label>
+          <input
+            class="border text-neutral-light-gray p-2 rounded-sm placeholder:font-medium"
+            type="number"
+            placeholder="e.g. +1 234 567 890"
+          />
+        </div>
       </div>
-    </div>
 
-    <!-- Step 2 -->
+      <!-- Step 2 -->
 
-    <div *ngIf="currentStep === 2" class="xl:mx-auto xl:mt-10">
-      <h2 class="text-2xl font-bold xl:mb-2">Select your plan</h2>
-      <p class="text-neutral-cool-gray mb-3 xl:mb-7">
-        You have the option of monthly or yearly billing.
-      </p>
+      <div *ngIf="currentStep === 2">
+        <h2 class="text-2xl font-bold xl:mb-2">Select your plan</h2>
+        <p class="text-neutral-cool-gray mb-3 xl:mb-7">
+          You have the option of monthly or yearly billing.
+        </p>
 
-      <div class="flex flex-col gap-3 xl:flex-row">
-        <label
-          class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg xl:flex-col xl:items-start xl:gap-0 xl:w-32"
-          for="arcade"
+        <div
+          class="flex flex-col gap-3 xl:flex-row xl:justify-evenly xl:gap-[18px]"
         >
-          <input type="radio" id="arcade" class="-ml-3 appearance-none" />
-          <img src="assets/images/icon-arcade.svg" alt="" />
-          <div class="xl:mt-9">
-            <h4>Arcade</h4>
-            <p class="text-neutral-cool-gray text-sm">$9/mo</p>
-          </div>
-        </label>
+          <label
+            class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg xl:flex-col xl:items-start xl:gap-0 xl:w-32"
+            for="arcade"
+          >
+            <input type="radio" id="arcade" class="-ml-3 appearance-none" />
+            <img src="assets/images/icon-arcade.svg" alt="" />
+            <div class="xl:mt-9">
+              <h4>Arcade</h4>
+              <p class="text-neutral-cool-gray text-sm">$9/mo</p>
+            </div>
+          </label>
 
-        <label
-          class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg xl:flex-col xl:items-start xl:gap-0 xl:w-32"
-          for="arcade"
-        >
-          <input type="radio" id="advanced" class="-ml-3 appearance-none" />
-          <img src="assets/images/icon-advanced.svg" alt="" />
-          <div class="xl:mt-9">
-            <h4>Advanced</h4>
-            <p class="text-neutral-cool-gray text-sm">$12/mo</p>
-          </div>
-        </label>
+          <label
+            class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg xl:flex-col xl:items-start xl:gap-0 xl:w-32"
+            for="arcade"
+          >
+            <input type="radio" id="advanced" class="-ml-3 appearance-none" />
+            <img src="assets/images/icon-advanced.svg" alt="" />
+            <div class="xl:mt-9">
+              <h4>Advanced</h4>
+              <p class="text-neutral-cool-gray text-sm">$12/mo</p>
+            </div>
+          </label>
 
-        <label
-          class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg xl:flex-col xl:items-start xl:gap-0 xl:w-32"
-          for="arcade"
+          <label
+            class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg xl:flex-col xl:items-start xl:gap-0 xl:w-32"
+            for="arcade"
+          >
+            <input type="radio" id="pro" class="-ml-3 appearance-none" />
+            <img src="assets/images/icon-pro.svg" alt="" />
+            <div class="xl:mt-9">
+              <h4>Pro</h4>
+              <p class="text-neutral-cool-gray text-sm">$15/mo</p>
+            </div>
+          </label>
+        </div>
+
+        <div
+          class="flex gap-5 justify-center mt-5 bg-neutral-magnolia py-3 rounded-lg font-medium text-sm xl:mt-10"
         >
-          <input type="radio" id="pro" class="-ml-3 appearance-none" />
-          <img src="assets/images/icon-pro.svg" alt="" />
-          <div class="xl:mt-9">
-            <h4>Pro</h4>
-            <p class="text-neutral-cool-gray text-sm">$15/mo</p>
+          <p>Monthly</p>
+          <label class="inline-flex relative items-center cursor-pointer">
+            <input type="checkbox" value="" class="sr-only peer" />
+            <div
+              class="w-9 h-5 bg-primary-marine peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-neutral-magnolia after:border-gray-300 after:border after:rounded-full after:h-[14px] after:w-[14px] after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+            ></div>
+          </label>
+          <p>Yearly</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+
+      <div *ngIf="currentStep === 3" class="xl:min-w-[420px]">
+        <h2 class="text-2xl font-bold xl:mb-2">Pick add-ons</h2>
+        <p class="text-neutral-cool-gray mb-3 xl:mb-7">
+          Add-ons help enhance your gaming experience.
+        </p>
+
+        <div class="flex flex-col gap-3">
+          <label
+            class="flex items-center justify-between gap-4 py-3 px-4 border border-neutral-light-gray rounded-lg"
+            for="online-service"
+          >
+            <div class="flex gap-4 items-center">
+              <input
+                class="flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+
+              <div>
+                <h4>Online service</h4>
+                <p class="text-neutral-cool-gray text-xs">
+                  Access to multiplayer games
+                </p>
+              </div>
+            </div>
+            <span class="text-primary-purplish-blue text-xs">+$1/mo</span>
+          </label>
+
+          <label
+            class="flex items-center justify-between gap-4 py-3 px-4 border border-neutral-light-gray rounded-lg"
+            for="larger-storage"
+          >
+            <div class="flex gap-4 items-center">
+              <input
+                class="flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:border-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+
+              <div>
+                <h4>Larger Storage</h4>
+                <p class="text-neutral-cool-gray text-xs">
+                  Extra 1TB of cloud save
+                </p>
+              </div>
+            </div>
+            <span class="text-primary-purplish-blue text-xs">+$2/mo</span>
+          </label>
+
+          <label
+            class="flex items-center justify-between gap-4 py-2 px-4 border border-neutral-light-gray rounded-lg"
+            for="custom-profile"
+          >
+            <div class="flex gap-4 form-check items-center">
+              <input
+                class="flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:border-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
+                type="checkbox"
+                value=""
+                id="flexCheckDefault"
+              />
+
+              <div>
+                <h4>Customizable profile</h4>
+                <p class="text-neutral-cool-gray text-xs">
+                  Custom theme on your profile
+                </p>
+              </div>
+            </div>
+            <span class="text-primary-purplish-blue text-xs">+$2/mo</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Summary -->
+      <div *ngIf="currentStep === 4 && !lastPage" class="xl:min-w-[420px]">
+        <h2 class="text-2xl font-bold xl:mb-2">Finishing up</h2>
+        <p class="text-neutral-cool-gray mb-3 xl:mb-7">
+          Double-check everything looks OK before confirming.
+        </p>
+
+        <div class="bg-neutral-magnolia py-5 px-4 text-sm rounded-lg">
+          <div class="flex justify-between items-center">
+            <div class="mb-3">
+              <h4 class="text-primary-marine font-semibold">
+                Arcade (Monthly)
+              </h4>
+              <a href="#" type="button" class="underline text-neutral-cool-gray"
+                >Change</a
+              >
+            </div>
+            <p class="text-primary-marine font-bold">$9/mo</p>
           </div>
-        </label>
+          <hr class="text-neutral-cool-gray" />
+          <ul class="text-neutral-cool-gray mt-3 flex flex-col gap-2">
+            <li class="flex justify-between">
+              <p>Online service</p>
+              <p class="text-primary-marine">+$1/mo</p>
+            </li>
+            <li class="flex justify-between">
+              <p>Larger storage</p>
+              <p class="text-primary-marine">+$2/mo</p>
+            </li>
+          </ul>
+        </div>
+
+        <div class="flex justify-between items-center py-5 px-4">
+          <h3 class="text-neutral-cool-gray text-sm">Total (per month)</h3>
+          <p class="text-primary-purplish-blue font-bold">+$12/mo</p>
+        </div>
+      </div>
+
+      <!-- Thank you -->
+      <div
+        class="flex flex-col items-center text-center xl:mt-32"
+        *ngIf="lastPage"
+      >
+        <img
+          class="w-14 mb-4 xl:w-[84px] xl:mb-8"
+          src="assets/images/icon-thank-you.svg"
+          alt=""
+        />
+        <h2 class="text-2xl font-bold mb-2 xl:text-4xl">Thank you!</h2>
+        <p class="text-neutral-cool-gray mb-3">
+          Thanks for confirming your subscription! We hope you have fun using
+          our platform. If you ever need support, please feel free to email us
+          at support@loremgaming.com.
+        </p>
       </div>
 
       <div
-        class="flex gap-5 justify-center mt-5 bg-neutral-magnolia py-3 rounded-lg font-medium text-sm xl:mt-10"
+        *ngIf="!lastPage"
+        class="xs:hidden xl:flex absolute bottom-10 justify-between bg-neutral-white min-w-[420px]"
+        [ngClass]="{ 'flex-row-reverse': currentStep === 1 }"
       >
-        <p>Monthly</p>
-        <label class="inline-flex relative items-center cursor-pointer">
-          <input type="checkbox" value="" class="sr-only peer" />
-          <div
-            class="w-9 h-5 bg-primary-marine peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-neutral-magnolia after:border-gray-300 after:border after:rounded-full after:h-[14px] after:w-[14px] after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
-          ></div>
-        </label>
-        <p>Yearly</p>
-      </div>
-    </div>
-
-    <!-- Step 3 -->
-
-    <div *ngIf="currentStep === 3" class="xl:mx-auto xl:mt-10 xl:w-[450px]">
-      <h2 class="text-2xl font-bold xl:mb-2">Pick add-ons</h2>
-      <p class="text-neutral-cool-gray mb-3 xl:mb-7">
-        Add-ons help enhance your gaming experience.
-      </p>
-
-      <div class="flex flex-col gap-3">
-        <label
-          class="flex items-center justify-between gap-4 py-3 px-4 border border-neutral-light-gray rounded-lg"
-          for="online-service"
+        <button
+          *ngIf="currentStep >= 2"
+          (click)="changePage(false)"
+          type="button"
+          class="text-neutral-cool-gray px-3 py-2 rounded"
         >
-          <div class="flex gap-4 items-center">
-            <input
-              class="flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-
-            <div>
-              <h4>Online service</h4>
-              <p class="text-neutral-cool-gray text-xs">
-                Access to multiplayer games
-              </p>
-            </div>
-          </div>
-          <span class="text-primary-purplish-blue text-xs">+$1/mo</span>
-        </label>
-
-        <label
-          class="flex items-center justify-between gap-4 py-3 px-4 border border-neutral-light-gray rounded-lg"
-          for="larger-storage"
+          Back
+        </button>
+        <button
+          *ngIf="currentStep !== 4"
+          (click)="changePage(true)"
+          type="button"
+          class="bg-primary-marine text-neutral-magnolia px-3 py-2 rounded"
         >
-          <div class="flex gap-4 items-center">
-            <input
-              class="flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:border-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-
-            <div>
-              <h4>Larger Storage</h4>
-              <p class="text-neutral-cool-gray text-xs">
-                Extra 1TB of cloud save
-              </p>
-            </div>
-          </div>
-          <span class="text-primary-purplish-blue text-xs">+$2/mo</span>
-        </label>
-
-        <label
-          class="flex items-center justify-between gap-4 py-2 px-4 border border-neutral-light-gray rounded-lg"
-          for="custom-profile"
+          Next step
+        </button>
+        <button
+          *ngIf="currentStep === 4"
+          (click)="toLastStep()"
+          type="button"
+          class="bg-primary-purplish-blue text-neutral-magnolia px-3 py-2 rounded"
         >
-          <div class="flex gap-4 form-check items-center">
-            <input
-              class="flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:border-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
-              type="checkbox"
-              value=""
-              id="flexCheckDefault"
-            />
-
-            <div>
-              <h4>Customizable profile</h4>
-              <p class="text-neutral-cool-gray text-xs">
-                Custom theme on your profile
-              </p>
-            </div>
-          </div>
-          <span class="text-primary-purplish-blue text-xs">+$2/mo</span>
-        </label>
+          Confirm
+        </button>
       </div>
-    </div>
-
-    <!-- Summary -->
-    <div *ngIf="currentStep === 4 && !lastPage" class="xl:mx-auto xl:mt-10">
-      <h2 class="text-2xl font-bold xl:mb-2">Finishing up</h2>
-      <p class="text-neutral-cool-gray mb-3 xl:mb-7">
-        Double-check everything looks OK before confirming.
-      </p>
-
-      <div class="bg-neutral-magnolia py-5 px-4 text-sm rounded-lg">
-        <div class="flex justify-between items-center">
-          <div class="mb-3">
-            <h4 class="text-primary-marine font-semibold">Arcade (Monthly)</h4>
-            <a href="#" type="button" class="underline text-neutral-cool-gray"
-              >Change</a
-            >
-          </div>
-          <p class="text-primary-marine font-bold">$9/mo</p>
-        </div>
-        <hr class="text-neutral-cool-gray" />
-        <ul class="text-neutral-cool-gray mt-3 flex flex-col gap-2">
-          <li class="flex justify-between">
-            <p>Online service</p>
-            <p class="text-primary-marine">+$1/mo</p>
-          </li>
-          <li class="flex justify-between">
-            <p>Larger storage</p>
-            <p class="text-primary-marine">+$2/mo</p>
-          </li>
-        </ul>
-      </div>
-
-      <div class="flex justify-between items-center py-5 px-4">
-        <h3 class="text-neutral-cool-gray text-sm">Total (per month)</h3>
-        <p class="text-primary-purplish-blue font-bold">+$12/mo</p>
-      </div>
-    </div>
-
-    <!-- Thank you -->
-    <div
-      class="flex flex-col items-center text-center xl:mx-auto xl:my-auto xl:w-[450px]"
-      *ngIf="lastPage"
-    >
-      <img
-        class="w-14 mb-4 xl:w-[88px] xl:mb-8"
-        src="assets/images/icon-thank-you.svg"
-        alt=""
-      />
-      <h2 class="text-2xl font-bold mb-2 xl:text-4xl">Thank you!</h2>
-      <p class="text-neutral-cool-gray mb-3">
-        Thanks for confirming your subscription! We hope you have fun using our
-        platform. If you ever need support, please feel free to email us at
-        support@loremgaming.com.
-      </p>
     </div>
   </form>
+
   <div
     *ngIf="!lastPage"
-    class="absolute bottom-0 w-screen p-5 flex justify-between bg-neutral-white"
+    class="xl:hidden absolute bottom-0 w-screen p-5 flex justify-between bg-neutral-white"
     [ngClass]="{ 'flex-row-reverse': currentStep === 1 }"
   >
     <button

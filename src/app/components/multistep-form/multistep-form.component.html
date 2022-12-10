@@ -272,7 +272,7 @@
 
       <div
         *ngIf="!lastPage"
-        class="xs:hidden xl:flex absolute bottom-10 justify-between bg-neutral-white min-w-[420px]"
+        class="fixed bottom-0 w-screen left-0 p-5 xl:absolute xl:p-0 flex xl:bottom-10 xl:left-[395px] justify-between bg-neutral-white xl:min-w-[420px] xl:max-w-[420px]"
         [ngClass]="{ 'flex-row-reverse': currentStep === 1 }"
       >
         <button
@@ -302,7 +302,7 @@
     </div>
   </form>
 
-  <div
+  <!-- <div
     *ngIf="!lastPage"
     class="xl:hidden absolute bottom-0 w-screen p-5 flex justify-between bg-neutral-white"
     [ngClass]="{ 'flex-row-reverse': currentStep === 1 }"
@@ -330,5 +330,5 @@
     >
       Confirm
     </button>
-  </div>
+  </div> -->
 </div>

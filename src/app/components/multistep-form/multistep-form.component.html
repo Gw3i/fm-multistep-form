@@ -9,6 +9,7 @@
   <app-stepper [currentStep]="currentStep" class="xl:hidden"></app-stepper>
   <form
     [formGroup]="form"
+    (ngSubmit)="onSubmit()"
     class="absolute top-24 rounded-lg bg-neutral-white py-8 px-5 mx-5 xl:flex xl:w-[65%] xl:p-7"
   >
     <app-stepper
@@ -25,7 +26,7 @@
     </picture>
     <div class="xl:mx-auto xl:mt-10 xl:max-w-[420px]">
       <!-- Step 1 -->
-      <div *ngIf="currentStep === 1" formGroupName="personal-info">
+      <div *ngIf="currentStep === 1">
         <h2 class="text-2xl font-bold">Personal Info</h2>
         <p class="text-neutral-cool-gray">
           Please provide your name, email address, and phone number.
@@ -57,7 +58,7 @@
 
       <!-- Step 2 -->
 
-      <div *ngIf="currentStep === 2" formGroupName="plan">
+      <div *ngIf="currentStep === 2">
         <h2 class="text-2xl font-bold xl:mb-2">Select your plan</h2>
         <p class="text-neutral-cool-gray mb-3 xl:mb-7">
           You have the option of monthly or yearly billing.
@@ -138,11 +139,7 @@
 
       <!-- Step 3 -->
 
-      <div
-        *ngIf="currentStep === 3"
-        class="xl:min-w-[420px]"
-        formGroupName="add-ons"
-      >
+      <div *ngIf="currentStep === 3" class="xl:min-w-[420px]">
         <h2 class="text-2xl font-bold xl:mb-2">Pick add-ons</h2>
         <p class="text-neutral-cool-gray mb-3 xl:mb-7">
           Add-ons help enhance your gaming experience.
@@ -296,8 +293,7 @@
         </button>
         <button
           *ngIf="currentStep === 4"
-          (click)="toLastStep()"
-          type="button"
+          type="submit"
           class="bg-primary-purplish-blue text-neutral-magnolia px-3 py-2 rounded"
         >
           Confirm
@@ -329,8 +325,7 @@
     </button>
     <button
       *ngIf="currentStep === 4"
-      (click)="toLastStep()"
-      type="button"
+      type="submit"
       class="bg-primary-purplish-blue text-neutral-magnolia px-3 py-2 rounded"
     >
       Confirm

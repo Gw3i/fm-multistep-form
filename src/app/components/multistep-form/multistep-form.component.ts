@@ -23,12 +23,9 @@ export class MultistepFormComponent implements OnInit {
   ngOnInit(): void {}
 
   changePage(isNextPage: boolean) {
-    if (!isNextPage && this.currentStep > 1) {
+    if (!isNextPage) {
       return this.currentStep--;
     } else {
-      if ((this.currentStep === 1 && !isNextPage) || this.currentStep === 4) {
-        return;
-      }
       return this.currentStep++;
     }
   }

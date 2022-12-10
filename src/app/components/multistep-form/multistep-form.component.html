@@ -238,9 +238,12 @@
     </div>
   </form>
   <div
+    *ngIf="!lastPage"
     class="absolute bottom-0 w-screen p-5 flex justify-between bg-neutral-white"
+    [ngClass]="{ 'flex-row-reverse': currentStep === 1 }"
   >
     <button
+      *ngIf="currentStep >= 2"
       (click)="changePage(false)"
       type="button"
       class="text-neutral-cool-gray px-3 py-2 rounded"
@@ -259,9 +262,9 @@
       *ngIf="currentStep === 4"
       (click)="toLastStep()"
       type="button"
-      class="bg-primary-marine text-neutral-magnolia px-3 py-2 rounded"
+      class="bg-primary-purplish-blue text-neutral-magnolia px-3 py-2 rounded"
     >
-      Next step
+      Confirm
     </button>
   </div>
 </div>

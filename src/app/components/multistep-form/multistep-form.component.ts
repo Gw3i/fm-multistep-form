@@ -18,6 +18,7 @@ import { StepperComponent } from '../stepper/stepper.component';
 })
 export class MultistepFormComponent implements OnInit {
   currentStep = 1;
+  lastPage = false;
 
   ngOnInit(): void {}
 
@@ -25,10 +26,14 @@ export class MultistepFormComponent implements OnInit {
     if (!isNextPage && this.currentStep > 1) {
       return this.currentStep--;
     } else {
-      if ((this.currentStep === 1 && !isNextPage) || this.currentStep === 5) {
+      if ((this.currentStep === 1 && !isNextPage) || this.currentStep === 4) {
         return;
       }
       return this.currentStep++;
     }
+  }
+
+  toLastStep() {
+    this.lastPage = true;
   }
 }

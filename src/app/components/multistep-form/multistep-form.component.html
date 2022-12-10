@@ -184,7 +184,7 @@
     </div>
 
     <!-- Summary -->
-    <div *ngIf="currentStep === 4" class="xl:mx-auto xl:mt-10">
+    <div *ngIf="currentStep === 4 && !lastPage" class="xl:mx-auto xl:mt-10">
       <h2 class="text-2xl font-bold xl:mb-2">Finishing up</h2>
       <p class="text-neutral-cool-gray mb-3 xl:mb-7">
         Double-check everything looks OK before confirming.
@@ -222,7 +222,7 @@
     <!-- Thank you -->
     <div
       class="flex flex-col items-center text-center xl:mx-auto xl:my-auto xl:w-[450px]"
-      *ngIf="currentStep === 5"
+      *ngIf="lastPage"
     >
       <img
         class="w-14 mb-4 xl:w-[88px] xl:mb-8"
@@ -248,7 +248,16 @@
       Back
     </button>
     <button
+      *ngIf="currentStep !== 4"
       (click)="changePage(true)"
+      type="button"
+      class="bg-primary-marine text-neutral-magnolia px-3 py-2 rounded"
+    >
+      Next step
+    </button>
+    <button
+      *ngIf="currentStep === 4"
+      (click)="toLastStep()"
       type="button"
       class="bg-primary-marine text-neutral-magnolia px-3 py-2 rounded"
     >

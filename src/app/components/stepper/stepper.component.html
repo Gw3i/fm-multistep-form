@@ -3,11 +3,14 @@
     <div
       class="border font-bold text-primary-light-blue rounded-full w-8 h-8 flex justify-center items-center"
       [ngClass]="{
-        'bg-primary-light-blue': currentStep === step,
-        'border-none': currentStep === step
+        'bg-primary-light-blue border-none': currentStep === step
       }"
     >
-      <p [ngClass]="{ 'text-primary-marine': currentStep === step }">
+      <p
+        [ngClass]="{
+          'text-primary-marine': currentStep === step
+        }"
+      >
         {{ step }}
       </p>
     </div>

@@ -240,11 +240,15 @@
   <div
     class="absolute bottom-0 w-screen p-5 flex justify-between bg-neutral-white"
   >
-    <button type="button" class="text-neutral-cool-gray px-3 py-2 rounded">
+    <button
+      (click)="changePage(false)"
+      type="button"
+      class="text-neutral-cool-gray px-3 py-2 rounded"
+    >
       Back
     </button>
     <button
-      (click)="changePage()"
+      (click)="changePage(true)"
       type="button"
       class="bg-primary-marine text-neutral-magnolia px-3 py-2 rounded"
     >

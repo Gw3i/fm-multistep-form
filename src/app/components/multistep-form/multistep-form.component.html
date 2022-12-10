@@ -8,6 +8,7 @@
   </picture>
   <app-stepper [currentStep]="currentStep" class="xl:hidden"></app-stepper>
   <form
+    [formGroup]="form"
     class="absolute top-24 rounded-lg bg-neutral-white py-8 px-5 mx-5 xl:flex xl:w-[65%] xl:p-7"
   >
     <app-stepper
@@ -23,7 +24,8 @@
       />
     </picture>
     <div class="xl:mx-auto xl:mt-10 xl:max-w-[420px]">
-      <div *ngIf="currentStep === 1">
+      <!-- Step 1 -->
+      <div *ngIf="currentStep === 1" formGroupName="personal-info">
         <h2 class="text-2xl font-bold">Personal Info</h2>
         <p class="text-neutral-cool-gray">
           Please provide your name, email address, and phone number.
@@ -31,18 +33,21 @@
         <div class="flex flex-col gap-1 text-xs mt-3">
           <label>Name </label>
           <input
+            formControlName="name"
             class="border text-neutral-light-gray p-2 rounded-sm placeholder:font-medium"
             type="text"
             placeholder="e.g. Stephen King"
           />
           <label class="mt-2">Email Address </label>
           <input
+            formControlName="email"
             class="border text-neutral-light-gray p-2 rounded-sm placeholder:font-medium"
             type="email"
             placeholder="e.g. stephenking@lorem.com"
           />
           <label class="mt-2">Phone Number </label>
           <input
+            formControlName="phone"
             class="border text-neutral-light-gray p-2 rounded-sm placeholder:font-medium"
             type="number"
             placeholder="e.g. +1 234 567 890"
@@ -52,7 +57,7 @@
 
       <!-- Step 2 -->
 
-      <div *ngIf="currentStep === 2">
+      <div *ngIf="currentStep === 2" formGroupName="plan">
         <h2 class="text-2xl font-bold xl:mb-2">Select your plan</h2>
         <p class="text-neutral-cool-gray mb-3 xl:mb-7">
           You have the option of monthly or yearly billing.
@@ -65,7 +70,12 @@
             class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg xl:flex-col xl:items-start xl:gap-0 xl:w-32"
             for="arcade"
           >
-            <input type="radio" id="arcade" class="-ml-3 appearance-none" />
+            <input
+              type="radio"
+              id="arcade"
+              class="-ml-3 appearance-none"
+              formControlName="arcade"
+            />
             <img src="assets/images/icon-arcade.svg" alt="" />
             <div class="xl:mt-9">
               <h4>Arcade</h4>
@@ -77,7 +87,12 @@
             class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg xl:flex-col xl:items-start xl:gap-0 xl:w-32"
             for="arcade"
           >
-            <input type="radio" id="advanced" class="-ml-3 appearance-none" />
+            <input
+              type="radio"
+              id="advanced"
+              class="-ml-3 appearance-none"
+              formControlName="advanced"
+            />
             <img src="assets/images/icon-advanced.svg" alt="" />
             <div class="xl:mt-9">
               <h4>Advanced</h4>
@@ -89,7 +104,12 @@
             class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg xl:flex-col xl:items-start xl:gap-0 xl:w-32"
             for="arcade"
           >
-            <input type="radio" id="pro" class="-ml-3 appearance-none" />
+            <input
+              type="radio"
+              id="pro"
+              class="-ml-3 appearance-none"
+              formControlName="pro"
+            />
             <img src="assets/images/icon-pro.svg" alt="" />
             <div class="xl:mt-9">
               <h4>Pro</h4>
@@ -103,7 +123,11 @@
         >
           <p>Monthly</p>
           <label class="inline-flex relative items-center cursor-pointer">
-            <input type="checkbox" value="" class="sr-only peer" />
+            <input
+              type="checkbox"
+              class="sr-only peer"
+              formControlName="billing-period"
+            />
             <div
               class="w-9 h-5 bg-primary-marine peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-neutral-magnolia after:border-gray-300 after:border after:rounded-full after:h-[14px] after:w-[14px] after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
             ></div>
@@ -114,7 +138,11 @@
 
       <!-- Step 3 -->
 
-      <div *ngIf="currentStep === 3" class="xl:min-w-[420px]">
+      <div
+        *ngIf="currentStep === 3"
+        class="xl:min-w-[420px]"
+        formGroupName="add-ons"
+      >
         <h2 class="text-2xl font-bold xl:mb-2">Pick add-ons</h2>
         <p class="text-neutral-cool-gray mb-3 xl:mb-7">
           Add-ons help enhance your gaming experience.
@@ -127,9 +155,9 @@
           >
             <div class="flex gap-4 items-center">
               <input
+                formControlName="online-service"
                 class="flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
                 type="checkbox"
-                value=""
                 id="flexCheckDefault"
               />
 
@@ -149,9 +177,9 @@
           >
             <div class="flex gap-4 items-center">
               <input
+                formControlName="storage"
                 class="flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:border-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
                 type="checkbox"
-                value=""
                 id="flexCheckDefault"
               />
 
@@ -171,9 +199,9 @@
           >
             <div class="flex gap-4 form-check items-center">
               <input
+                formControlName="custom-profile"
                 class="flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:border-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
                 type="checkbox"
-                value=""
                 id="flexCheckDefault"
               />
 

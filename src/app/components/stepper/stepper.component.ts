@@ -6,7 +6,6 @@ import {
   ViewEncapsulation,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { MultistepFormService } from '../multistep-form/multistep-form.service';
 
 @Component({
   selector: 'app-stepper',
@@ -18,14 +17,12 @@ import { MultistepFormService } from '../multistep-form/multistep-form.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class StepperComponent implements OnInit {
-  steps: number[] | null = null;
+  @Input()
+  currentStep!: number;
 
-  currentStep: number | null = null;
-
-  constructor(private _multistepFormService: MultistepFormService) {}
+  steps = [1, 2, 3, 4];
 
   ngOnInit(): void {
-    this.steps = this._multistepFormService.steps;
-    this.currentStep = this._multistepFormService.currentStep;
+    console.log(this.currentStep);
   }
 }

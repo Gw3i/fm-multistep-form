@@ -6,7 +6,6 @@ import {
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { StepperComponent } from '../stepper/stepper.component';
-import { MultistepFormService } from './multistep-form.service';
 
 @Component({
   selector: 'app-multistep-form',
@@ -18,11 +17,11 @@ import { MultistepFormService } from './multistep-form.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MultistepFormComponent implements OnInit {
-  currentStep: number | null = null;
+  currentStep = 1;
 
-  constructor(private _multistepFormService: MultistepFormService) {}
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-    this.currentStep = this._multistepFormService.currentStep;
+  changePage() {
+    this.currentStep++;
   }
 }

@@ -6,7 +6,7 @@
       width="100%"
     />
   </picture>
-  <app-stepper class="xl:hidden"></app-stepper>
+  <app-stepper [currentStep]="currentStep" class="xl:hidden"></app-stepper>
   <form
     class="absolute top-24 rounded-lg bg-neutral-white py-8 px-5 mx-5 xl:flex xl:w-[65%] xl:p-7"
   >
@@ -244,6 +244,7 @@
       Back
     </button>
     <button
+      (click)="changePage()"
       type="button"
       class="bg-primary-marine text-neutral-magnolia px-3 py-2 rounded"
     >

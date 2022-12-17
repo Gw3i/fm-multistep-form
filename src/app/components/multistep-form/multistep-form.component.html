@@ -35,21 +35,21 @@
           <label>Name </label>
           <input
             formControlName="name"
-            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-marine focus:invalid:border-primary-strawberry-red p-2 rounded-md placeholder:font-medium"
+            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue focus:invalid:border-primary-strawberry-red p-2 rounded-md placeholder:font-medium"
             type="text"
             placeholder="e.g. Stephen King"
           />
           <label class="mt-2">Email Address </label>
           <input
             formControlName="email"
-            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-marine focus:invalid:border-primary-strawberry-red p-2 rounded-md placeholder:font-medium"
+            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue focus:invalid:border-primary-strawberry-red p-2 rounded-md placeholder:font-medium"
             type="email"
             placeholder="e.g. stephenking@lorem.com"
           />
           <label class="mt-2">Phone Number </label>
           <input
             formControlName="phone"
-            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-marine focus:invalid:border-primary-strawberry-red p-2 rounded-md placeholder:font-medium"
+            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue focus:invalid:border-primary-strawberry-red p-2 rounded-md placeholder:font-medium"
             type="number"
             placeholder="e.g. +1 234 567 890"
           />
@@ -67,56 +67,93 @@
         <div
           class="flex flex-col gap-3 xl:flex-row xl:justify-evenly xl:gap-[18px]"
         >
-          <label
-            class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg xl:flex-col xl:items-start xl:gap-0 xl:w-32"
-            for="arcade"
-          >
+          <article class="checkbox-box relative w-[140px] h-[150px]">
             <input
-              type="radio"
-              id="arcade"
-              class="-ml-3 appearance-none"
-              formControlName="arcade"
+              type="checkbox"
+              class="absolute top-0 left-0 w-[140px] h-[150px] opacity-0 cursor-pointer"
             />
-            <img src="assets/images/icon-arcade.svg" alt="" />
-            <div class="xl:mt-9">
-              <h4>Arcade</h4>
-              <p class="text-neutral-cool-gray text-sm">$9/mo</p>
+            <div
+              class="w-full h-full flex justify-center items-center transition"
+            >
+              <input
+                type="checkbox"
+                id="arcade"
+                class="absolute top-0 left-0 w-[140px] h-[150px] opacity-0 cursor-pointer"
+                formControlName="arcade"
+              />
+              <div
+                class="py-4 px-3 content-between grid w-full h-full transition border rounded-md border-neutral-light-gray"
+              >
+                <img
+                  src="assets/images/icon-arcade.svg"
+                  class="max-w-[50px]"
+                  alt="arcade icon"
+                />
+                <div>
+                  <h4 class="font-semibold">Arcade</h4>
+                  <p class="text-neutral-cool-gray text-sm">$9/mo</p>
+                </div>
+              </div>
             </div>
-          </label>
-
-          <label
-            class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg xl:flex-col xl:items-start xl:gap-0 xl:w-32"
-            for="arcade"
-          >
+          </article>
+          <article class="checkbox-box relative w-[140px] h-[150px]">
             <input
-              type="radio"
-              id="advanced"
-              class="-ml-3 appearance-none"
-              formControlName="advanced"
+              type="checkbox"
+              class="absolute top-0 left-0 w-[140px] h-[150px] opacity-0 cursor-pointer"
             />
-            <img src="assets/images/icon-advanced.svg" alt="" />
-            <div class="xl:mt-9">
-              <h4>Advanced</h4>
-              <p class="text-neutral-cool-gray text-sm">$12/mo</p>
+            <div
+              class="w-full h-full flex justify-center items-center transition"
+            >
+              <input
+                type="checkbox"
+                id="arcade"
+                class="absolute top-0 left-0 w-[140px] h-[150px] opacity-0 cursor-pointer"
+                formControlName="arcade"
+              />
+              <div
+                class="py-4 px-3 content-between grid w-full h-full transition border rounded-md border-neutral-light-gray"
+              >
+                <img
+                  src="assets/images/icon-advanced.svg"
+                  class="max-w-[50px]"
+                  alt="advanced icon"
+                />
+                <div>
+                  <h4 class="font-semibold">Advanced</h4>
+                  <p class="text-neutral-cool-gray text-sm">$12/mo</p>
+                </div>
+              </div>
             </div>
-          </label>
-
-          <label
-            class="flex items-center gap-4 p-3 border border-primary-purplish-blue rounded-lg xl:flex-col xl:items-start xl:gap-0 xl:w-32"
-            for="arcade"
-          >
+          </article>
+          <article class="checkbox-box relative w-[140px] h-[150px]">
             <input
-              type="radio"
-              id="pro"
-              class="-ml-3 appearance-none"
-              formControlName="pro"
+              type="checkbox"
+              class="absolute top-0 left-0 w-[140px] h-[150px] opacity-0 cursor-pointer"
             />
-            <img src="assets/images/icon-pro.svg" alt="" />
-            <div class="xl:mt-9">
-              <h4>Pro</h4>
-              <p class="text-neutral-cool-gray text-sm">$15/mo</p>
+            <div
+              class="w-full h-full flex justify-center items-center transition"
+            >
+              <input
+                type="checkbox"
+                id="arcade"
+                class="absolute top-0 left-0 w-[140px] h-[150px] opacity-0 cursor-pointer"
+                formControlName="arcade"
+              />
+              <div
+                class="py-4 px-3 content-between grid w-full h-full transition border rounded-md border-neutral-light-gray"
+              >
+                <img
+                  src="assets/images/icon-pro.svg"
+                  class="max-w-[50px]"
+                  alt=""
+                />
+                <div>
+                  <h4 class="font-semibold">Pro</h4>
+                  <p class="text-neutral-cool-gray text-sm">$15/mo</p>
+                </div>
+              </div>
             </div>
-          </label>
+          </article>
         </div>
 
         <div

@@ -67,106 +67,84 @@
         <div
           class="flex flex-col gap-3 xl:flex-row xl:justify-evenly xl:gap-[18px]"
         >
-          <article class="checkbox-box relative w-[128px] h-[150px]">
+          <article
+            class="checkbox-box relative w-full h-20 xl:w-[128px] xl:h-[150px] flex justify-center items-center transition"
+          >
             <input
               type="checkbox"
-              class="absolute top-0 left-0 w-[128px] h-[150px] opacity-0 cursor-pointer"
+              id="arcade"
+              class="absolute top-0 left-0 w-full h-20 xl:w-[128px] xl:h-[150px] opacity-0 cursor-pointer"
+              formControlName="arcade"
             />
             <div
-              class="w-full h-full flex justify-center items-center transition"
+              class="py-4 px-3 flex gap-3 xl:gap-0 xl:content-between xl:grid w-full h-full transition border rounded-md border-neutral-light-gray"
             >
-              <input
-                type="checkbox"
-                id="arcade"
-                class="absolute top-0 left-0 w-[128px] h-[150px] opacity-0 cursor-pointer"
-                formControlName="arcade"
+              <img
+                src="assets/images/icon-arcade.svg"
+                class="max-w-[40px] xl:max-w-[50px]"
+                alt="arcade icon"
               />
-              <div
-                class="py-4 px-3 content-between grid w-full h-full transition border rounded-md border-neutral-light-gray"
-              >
-                <img
-                  src="assets/images/icon-arcade.svg"
-                  class="max-w-[50px]"
-                  alt="arcade icon"
-                />
-                <div>
-                  <h4 class="font-semibold">Arcade</h4>
-                  <p
-                    class="text-neutral-cool-gray text-sm"
-                    id="selectArcade"
-                    #selectArcade
-                  >
-                    {{ arcadePlan }}$/{{
-                      billingPeriod === "monthly" ? "mo" : "yr"
-                    }}
-                  </p>
-                </div>
+              <div>
+                <h4 class="font-semibold">Arcade</h4>
+                <p class="text-neutral-cool-gray text-sm" id="selectArcade">
+                  {{ arcadePlan }}$/{{
+                    billingPeriod === "monthly" ? "mo" : "yr"
+                  }}
+                </p>
               </div>
             </div>
           </article>
-          <article class="checkbox-box relative w-[128px] h-[150px]">
+
+          <article
+            class="checkbox-box relative w-full h-20 xl:w-[128px] xl:h-[150px] flex justify-center items-center transition"
+          >
             <input
               type="checkbox"
-              class="absolute top-0 left-0 w-[128px] h-[150px] opacity-0 cursor-pointer"
+              id="advanced"
+              class="absolute top-0 left-0 w-full h-20 xl:w-[128px] xl:h-[150px] opacity-0 cursor-pointer"
+              formControlName="advanced"
             />
             <div
-              class="w-full h-full flex justify-center items-center transition"
+              class="py-4 px-3 flex gap-3 xl:gap-0 xl:content-between xl:grid w-full h-full transition border rounded-md border-neutral-light-gray"
             >
-              <input
-                type="checkbox"
-                id="arcade"
-                class="absolute top-0 left-0 w-[128px] h-[150px] opacity-0 cursor-pointer"
-                formControlName="arcade"
+              <img
+                src="assets/images/icon-advanced.svg"
+                class="max-w-[40px] xl:max-w-[50px]"
+                alt="advanced icon"
               />
-              <div
-                class="py-4 px-3 content-between grid w-full h-full transition border rounded-md border-neutral-light-gray"
-              >
-                <img
-                  src="assets/images/icon-advanced.svg"
-                  class="max-w-[50px]"
-                  alt="advanced icon"
-                />
-                <div>
-                  <h4 class="font-semibold">Advanced</h4>
-                  <p class="text-neutral-cool-gray text-sm" id="selectAdvanced">
-                    {{ advancedPlan }}$/{{
-                      billingPeriod === "monthly" ? "mo" : "yr"
-                    }}
-                  </p>
-                </div>
+              <div>
+                <h4 class="font-semibold">Advanced</h4>
+                <p class="text-neutral-cool-gray text-sm" id="selectAdvanced">
+                  {{ advancedPlan }}$/{{
+                    billingPeriod === "monthly" ? "mo" : "yr"
+                  }}
+                </p>
               </div>
             </div>
           </article>
-          <article class="checkbox-box relative w-[128px] h-[150px]">
+
+          <article
+            class="checkbox-box relative w-full h-20 xl:w-[128px] xl:h-[150px] flex justify-center items-center transition"
+          >
             <input
               type="checkbox"
-              class="absolute top-0 left-0 w-[128px] h-[150px] opacity-0 cursor-pointer"
+              id="pro"
+              class="absolute top-0 left-0 w-full h-20 xl:w-[128px] xl:h-[150px] opacity-0 cursor-pointer"
+              formControlName="pro"
             />
             <div
-              class="w-full h-full flex justify-center items-center transition"
+              class="py-4 px-3 flex gap-3 xl:gap-0 xl:content-between xl:grid w-full h-full transition border rounded-md border-neutral-light-gray"
             >
-              <input
-                type="checkbox"
-                id="arcade"
-                class="absolute top-0 left-0 w-[128px] h-[150px] opacity-0 cursor-pointer"
-                formControlName="arcade"
+              <img
+                src="assets/images/icon-pro.svg"
+                class="max-w-[40px] xl:max-w-[50px]"
+                alt="pro icon"
               />
-              <div
-                class="py-4 px-3 content-between grid w-full h-full transition border rounded-md border-neutral-light-gray"
-              >
-                <img
-                  src="assets/images/icon-pro.svg"
-                  class="max-w-[50px]"
-                  alt=""
-                />
-                <div>
-                  <h4 class="font-semibold">Pro</h4>
-                  <p class="text-neutral-cool-gray text-sm" id="selectPro">
-                    {{ proPlan }}$/{{
-                      billingPeriod === "monthly" ? "mo" : "yr"
-                    }}
-                  </p>
-                </div>
+              <div>
+                <h4 class="font-semibold">Pro</h4>
+                <p class="text-neutral-cool-gray text-sm" id="selectPro">
+                  {{ proPlan }}$/{{ billingPeriod === "monthly" ? "mo" : "yr" }}
+                </p>
               </div>
             </div>
           </article>

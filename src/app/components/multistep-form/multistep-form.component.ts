@@ -2,9 +2,7 @@ import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
-  ElementRef,
   OnInit,
-  ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
@@ -20,7 +18,7 @@ import { StepperComponent } from '../stepper/stepper.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MultistepFormComponent implements OnInit {
-  currentStep = 3;
+  currentStep = 2;
   lastPage = false;
   form!: FormGroup;
   billingPeriod: 'monthly' | 'yearly' = 'monthly';
@@ -30,9 +28,6 @@ export class MultistepFormComponent implements OnInit {
   onlineService = 1;
   storage = 2;
   customProfile = 2;
-
-  @ViewChild('selectArcade')
-  selectArcade!: ElementRef;
 
   ngOnInit(): void {
     this.form = new FormGroup({

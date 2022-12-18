@@ -71,34 +71,33 @@ export class MultistepFormComponent implements OnInit {
     console.log(this.form);
     this.lastPage = true;
     console.log(this.form.controls['billing-period']);
-    if (this.form.get('plan')?.value === 'arcadePlan') {
-      this.total =
-        this.arcadePlan +
-        (this.form.get('onlineService')?.value && this.onlineService) +
-        (this.form.get('storage')?.value && this.storage) +
-        (this.form.get('customProfile')?.value && this.customProfile);
-      console.log(this.total);
-    } else if (this.form.get('plan')?.value === 'advanced') {
-      this.total =
-        this.advancedPlan +
-        (this.form.get('onlineService')?.value && this.onlineService) +
-        (this.form.get('storage')?.value && this.storage) +
-        (this.form.get('customProfile')?.value && this.customProfile);
-      console.log(this.total);
-    } else {
-      this.total =
-        this.proPlan +
-        (this.form.get('onlineService')?.value && this.onlineService) +
-        (this.form.get('storage')?.value && this.storage) +
-        (this.form.get('customProfile')?.value && this.customProfile);
-      console.log(this.total);
-    }
   }
 
   changePage(isNextPage: boolean) {
     if (!isNextPage) {
       return this.currentStep--;
     } else {
+      if (this.currentStep === 3) {
+        if (this.form.get('plan')?.value === 'arcadePlan') {
+          this.total =
+            this.arcadePlan +
+            (this.form.get('onlineService')?.value && this.onlineService) +
+            (this.form.get('storage')?.value && this.storage) +
+            (this.form.get('customProfile')?.value && this.customProfile);
+        } else if (this.form.get('plan')?.value === 'advanced') {
+          this.total =
+            this.advancedPlan +
+            (this.form.get('onlineService')?.value && this.onlineService) +
+            (this.form.get('storage')?.value && this.storage) +
+            (this.form.get('customProfile')?.value && this.customProfile);
+        } else {
+          this.total =
+            this.proPlan +
+            (this.form.get('onlineService')?.value && this.onlineService) +
+            (this.form.get('storage')?.value && this.storage) +
+            (this.form.get('customProfile')?.value && this.customProfile);
+        }
+      }
       return this.currentStep++;
     }
   }

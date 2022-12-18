@@ -334,11 +334,13 @@
         </div>
 
         <div class="flex justify-between items-center py-5 px-4">
-          <h3 class="text-neutral-cool-gray text-sm">Total (per month)</h3>
-          <pre>{{ form.get("onlineService")?.value }}</pre>
-          <pre>{{ form.get("storage")?.value }}</pre>
-          <pre>{{ form.get("customProfile")?.value }}</pre>
-          <p class="text-primary-purplish-blue font-bold">+$12/mo</p>
+          <h3 class="text-neutral-cool-gray text-sm">
+            Total (per {{ billingPeriod === "monthly" ? "month" : "year" }})
+          </h3>
+
+          <p class="text-primary-purplish-blue font-bold">
+            +${{ total }}/{{ billingPeriod === "monthly" ? "mo" : "yr" }}
+          </p>
         </div>
       </div>
 

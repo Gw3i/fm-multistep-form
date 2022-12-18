@@ -1,5 +1,6 @@
 app-multistep-form {
-  .checkbox-box input[type="checkbox"]:checked ~ div {
+  .checkbox-box input[type="checkbox"]:checked ~ div,
+  .checkbox-box input[type="radio"]:checked ~ div {
     background-color: hsl(231, 100%, 99%);
     border: 1px solid hsl(243, 100%, 62%);
     border-radius: 8px;

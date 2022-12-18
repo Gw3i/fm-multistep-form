@@ -18,7 +18,7 @@ import { StepperComponent } from '../stepper/stepper.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MultistepFormComponent implements OnInit {
-  currentStep = 3;
+  currentStep = 2;
   lastPage = false;
   form!: FormGroup;
   billingPeriod: 'monthly' | 'yearly' = 'monthly';
@@ -35,9 +35,9 @@ export class MultistepFormComponent implements OnInit {
       email: new FormControl(null),
       phone: new FormControl(null),
 
-      arcade: new FormControl(null),
-      advanced: new FormControl(null),
-      pro: new FormControl(null),
+      plan: new FormControl('arcade'),
+      // advanced: new FormControl('advanced'),
+      // pro: new FormControl('pro'),
 
       billingPeriod: new FormControl(false),
 

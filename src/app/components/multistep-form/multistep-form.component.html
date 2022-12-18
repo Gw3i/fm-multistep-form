@@ -71,10 +71,12 @@
             class="checkbox-box relative w-full h-20 xl:w-[128px] xl:h-[150px] flex justify-center items-center transition"
           >
             <input
-              type="checkbox"
+              name="plan"
+              value="arcadePlan"
+              type="radio"
               id="arcade"
               class="absolute top-0 left-0 w-full h-20 xl:w-[128px] xl:h-[150px] opacity-0 cursor-pointer"
-              formControlName="arcade"
+              formControlName="plan"
             />
             <div
               class="py-4 px-3 flex gap-3 xl:gap-0 xl:content-between xl:grid w-full h-full transition border rounded-md border-neutral-light-gray"
@@ -99,10 +101,12 @@
             class="checkbox-box relative w-full h-20 xl:w-[128px] xl:h-[150px] flex justify-center items-center transition"
           >
             <input
-              type="checkbox"
+              name="plan"
+              value="advancedPlan"
+              type="radio"
               id="advanced"
               class="absolute top-0 left-0 w-full h-20 xl:w-[128px] xl:h-[150px] opacity-0 cursor-pointer"
-              formControlName="advanced"
+              formControlName="plan"
             />
             <div
               class="py-4 px-3 flex gap-3 xl:gap-0 xl:content-between xl:grid w-full h-full transition border rounded-md border-neutral-light-gray"
@@ -127,10 +131,12 @@
             class="checkbox-box relative w-full h-20 xl:w-[128px] xl:h-[150px] flex justify-center items-center transition"
           >
             <input
-              type="checkbox"
+              name="plan"
+              value="proPlan"
+              type="radio"
               id="pro"
               class="absolute top-0 left-0 w-full h-20 xl:w-[128px] xl:h-[150px] opacity-0 cursor-pointer"
-              formControlName="pro"
+              formControlName="plan"
             />
             <div
               class="py-4 px-3 flex gap-3 xl:gap-0 xl:content-between xl:grid w-full h-full transition border rounded-md border-neutral-light-gray"
@@ -268,9 +274,7 @@
           <div class="flex justify-between items-center">
             <div class="mb-3">
               <h4 class="text-primary-marine font-semibold">
-                Arcade ({{
-                  billingPeriod === "monthly" ? "Monthly" : "Yearly"
-                }})
+                Arcade({{ billingPeriod === "monthly" ? "Monthly" : "Yearly" }})
               </h4>
               <a href="#" type="button" class="underline text-neutral-cool-gray"
                 >Change</a

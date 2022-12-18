@@ -1,12 +1,14 @@
+import { CommonModule } from '@angular/common';
 import {
   ChangeDetectionStrategy,
   Component,
+  ElementRef,
   OnInit,
+  ViewChild,
   ViewEncapsulation,
 } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { StepperComponent } from '../stepper/stepper.component';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { StepperComponent } from '../stepper/stepper.component';
 
 @Component({
   selector: 'app-multistep-form',
@@ -21,6 +23,12 @@ export class MultistepFormComponent implements OnInit {
   currentStep = 2;
   lastPage = false;
   form!: FormGroup;
+  arcadePlan = '9$/mo';
+  advancedPlan = '12$/mo';
+  proPlan = '15$/mo';
+
+  @ViewChild('selectArcade')
+  selectArcade!: ElementRef;
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -31,7 +39,8 @@ export class MultistepFormComponent implements OnInit {
       arcade: new FormControl(null),
       advanced: new FormControl(null),
       pro: new FormControl(null),
-      'billing-period': new FormControl('monthly'),
+
+      billingPeriod: new FormControl(false),
 
       'online-service': new FormControl(null),
       storage: new FormControl(null),
@@ -39,9 +48,23 @@ export class MultistepFormComponent implements OnInit {
     });
   }
 
+  changeBillingPeriod() {
+    let isYearly = this.form.controls['billingPeriod'].value;
+    if (isYearly) {
+      this.arcadePlan = '90$/yr';
+      this.advancedPlan = '120$/yr';
+      this.proPlan = '150$/yr';
+    } else {
+      this.arcadePlan = '9$/mo';
+      this.advancedPlan = '12$/mo';
+      this.proPlan = '15$/mo';
+    }
+  }
+
   onSubmit() {
     console.log(this.form);
     this.lastPage = true;
+    console.log(this.form.controls['billing-period']);
   }
 
   changePage(isNextPage: boolean) {

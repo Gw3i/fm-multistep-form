@@ -67,10 +67,10 @@
         <div
           class="flex flex-col gap-3 xl:flex-row xl:justify-evenly xl:gap-[18px]"
         >
-          <article class="checkbox-box relative w-[140px] h-[150px]">
+          <article class="checkbox-box relative w-[128px] h-[150px]">
             <input
               type="checkbox"
-              class="absolute top-0 left-0 w-[140px] h-[150px] opacity-0 cursor-pointer"
+              class="absolute top-0 left-0 w-[128px] h-[150px] opacity-0 cursor-pointer"
             />
             <div
               class="w-full h-full flex justify-center items-center transition"
@@ -78,7 +78,7 @@
               <input
                 type="checkbox"
                 id="arcade"
-                class="absolute top-0 left-0 w-[140px] h-[150px] opacity-0 cursor-pointer"
+                class="absolute top-0 left-0 w-[128px] h-[150px] opacity-0 cursor-pointer"
                 formControlName="arcade"
               />
               <div
@@ -91,15 +91,21 @@
                 />
                 <div>
                   <h4 class="font-semibold">Arcade</h4>
-                  <p class="text-neutral-cool-gray text-sm">$9/mo</p>
+                  <p
+                    class="text-neutral-cool-gray text-sm"
+                    id="selectArcade"
+                    #selectArcade
+                  >
+                    {{ arcadePlan }}
+                  </p>
                 </div>
               </div>
             </div>
           </article>
-          <article class="checkbox-box relative w-[140px] h-[150px]">
+          <article class="checkbox-box relative w-[128px] h-[150px]">
             <input
               type="checkbox"
-              class="absolute top-0 left-0 w-[140px] h-[150px] opacity-0 cursor-pointer"
+              class="absolute top-0 left-0 w-[128px] h-[150px] opacity-0 cursor-pointer"
             />
             <div
               class="w-full h-full flex justify-center items-center transition"
@@ -107,7 +113,7 @@
               <input
                 type="checkbox"
                 id="arcade"
-                class="absolute top-0 left-0 w-[140px] h-[150px] opacity-0 cursor-pointer"
+                class="absolute top-0 left-0 w-[128px] h-[150px] opacity-0 cursor-pointer"
                 formControlName="arcade"
               />
               <div
@@ -120,15 +126,17 @@
                 />
                 <div>
                   <h4 class="font-semibold">Advanced</h4>
-                  <p class="text-neutral-cool-gray text-sm">$12/mo</p>
+                  <p class="text-neutral-cool-gray text-sm" id="selectAdvanced">
+                    {{ advancedPlan }}
+                  </p>
                 </div>
               </div>
             </div>
           </article>
-          <article class="checkbox-box relative w-[140px] h-[150px]">
+          <article class="checkbox-box relative w-[128px] h-[150px]">
             <input
               type="checkbox"
-              class="absolute top-0 left-0 w-[140px] h-[150px] opacity-0 cursor-pointer"
+              class="absolute top-0 left-0 w-[128px] h-[150px] opacity-0 cursor-pointer"
             />
             <div
               class="w-full h-full flex justify-center items-center transition"
@@ -136,7 +144,7 @@
               <input
                 type="checkbox"
                 id="arcade"
-                class="absolute top-0 left-0 w-[140px] h-[150px] opacity-0 cursor-pointer"
+                class="absolute top-0 left-0 w-[128px] h-[150px] opacity-0 cursor-pointer"
                 formControlName="arcade"
               />
               <div
@@ -149,7 +157,9 @@
                 />
                 <div>
                   <h4 class="font-semibold">Pro</h4>
-                  <p class="text-neutral-cool-gray text-sm">$15/mo</p>
+                  <p class="text-neutral-cool-gray text-sm" id="selectPro">
+                    {{ proPlan }}
+                  </p>
                 </div>
               </div>
             </div>
@@ -162,9 +172,10 @@
           <p>Monthly</p>
           <label class="inline-flex relative items-center cursor-pointer">
             <input
+              (change)="changeBillingPeriod()"
               type="checkbox"
               class="sr-only peer"
-              formControlName="billing-period"
+              formControlName="billingPeriod"
             />
             <div
               class="w-9 h-5 bg-primary-marine peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-neutral-magnolia after:border-gray-300 after:border after:rounded-full after:h-[14px] after:w-[14px] after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
@@ -268,17 +279,17 @@
                 >Change</a
               >
             </div>
-            <p class="text-primary-marine font-bold">$9/mo</p>
+            <p class="text-primary-marine font-bold" id="sumArcade">$9/mo</p>
           </div>
           <hr class="text-neutral-cool-gray" />
           <ul class="text-neutral-cool-gray mt-3 flex flex-col gap-2">
             <li class="flex justify-between">
               <p>Online service</p>
-              <p class="text-primary-marine">+$1/mo</p>
+              <p class="text-primary-marine" id="sumArcade">+$1/mo</p>
             </li>
             <li class="flex justify-between">
               <p>Larger storage</p>
-              <p class="text-primary-marine">+$2/mo</p>
+              <p class="text-primary-marine" id="sumArcade">+$2/mo</p>
             </li>
           </ul>
         </div>

@@ -212,7 +212,7 @@
           <article class="mt-[50px] xl:mt-16">
             <label class="checkbox-box flex gap-4 items-center">
               <input
-                formControlName="onlineService"
+                formControlName="storage"
                 class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
                 type="checkbox"
               />
@@ -274,23 +274,58 @@
           <div class="flex justify-between items-center">
             <div class="mb-3">
               <h4 class="text-primary-marine font-semibold">
-                Arcade({{ billingPeriod === "monthly" ? "Monthly" : "Yearly" }})
+                {{
+                  form.get("plan")?.value === "arcadePlan"
+                    ? "Arcade"
+                    : form.get("plan")?.value === "advancedPlan"
+                    ? "Advanced"
+                    : "Pro"
+                }}
+                ({{ billingPeriod === "monthly" ? "Monthly" : "Yearly" }})
               </h4>
               <a href="#" type="button" class="underline text-neutral-cool-gray"
                 >Change</a
               >
             </div>
-            <p class="text-primary-marine font-bold" id="sumArcade">$9/mo</p>
+            <p class="text-primary-marine font-bold" id="sumArcade">
+              ${{
+                form.get("plan")?.value === "arcadePlan"
+                  ? arcadePlan
+                  : form.get("plan")?.value === "advancedPlan"
+                  ? advancedPlan
+                  : proPlan
+              }}/{{ billingPeriod === "monthly" ? "mo" : "yr" }}
+            </p>
           </div>
           <hr class="text-neutral-cool-gray" />
           <ul class="text-neutral-cool-gray mt-3 flex flex-col gap-2">
-            <li class="flex justify-between">
+            <li
+              *ngIf="form.get('onlineService')?.value"
+              class="flex justify-between"
+            >
               <p>Online service</p>
-              <p class="text-primary-marine" id="sumArcade">+$1/mo</p>
+              <p class="text-primary-marine" id="sumArcade">
+                +${{ onlineService }}/{{
+                  billingPeriod === "monthly" ? "mo" : "yr"
+                }}
+              </p>
             </li>
-            <li class="flex justify-between">
+            <li *ngIf="form.get('storage')?.value" class="flex justify-between">
               <p>Larger storage</p>
-              <p class="text-primary-marine" id="sumArcade">+$2/mo</p>
+              <p class="text-primary-marine" id="sumArcade">
+                +${{ storage }}/{{ billingPeriod === "monthly" ? "mo" : "yr" }}
+              </p>
+            </li>
+            <li
+              *ngIf="form.get('customProfile')?.value"
+              class="flex justify-between"
+            >
+              <p>Customizable Profile</p>
+              <p class="text-primary-marine" id="sumArcade">
+                +${{ customProfile }}/{{
+                  billingPeriod === "monthly" ? "mo" : "yr"
+                }}
+              </p>
             </li>
           </ul>
         </div>

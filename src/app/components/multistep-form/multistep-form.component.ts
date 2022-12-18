@@ -35,9 +35,7 @@ export class MultistepFormComponent implements OnInit {
       email: new FormControl(null),
       phone: new FormControl(null),
 
-      plan: new FormControl('arcade'),
-      // advanced: new FormControl('advanced'),
-      // pro: new FormControl('pro'),
+      plan: new FormControl('arcadePlan'),
 
       billingPeriod: new FormControl(false),
 

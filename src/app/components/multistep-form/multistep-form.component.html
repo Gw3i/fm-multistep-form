@@ -171,26 +171,25 @@
 
       <!-- Step 3 -->
 
-      <div *ngIf="currentStep === 3" class="xl:min-w-[420px]">
+      <section *ngIf="currentStep === 3" class="xl:min-w-[420px]">
         <h2 class="text-2xl font-bold xl:mb-2">Pick add-ons</h2>
         <p class="text-neutral-cool-gray mb-3 xl:mb-7">
           Add-ons help enhance your gaming experience.
         </p>
 
-        <div class="relative top-7">
-          <label class="checkbox-box" for="online-service">
-            <div class="flex gap-4 items-center">
+        <div class="w-full mt-12 mb-6 xl:relative xl:left-0">
+          <article>
+            <label class="checkbox-box flex gap-4 items-center">
               <input
-                formControlName="online-service"
+                formControlName="onlineService"
                 class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
                 type="checkbox"
-                id="online-service"
               />
               <div
-                class="flex items-center justify-between absolute left-0 w-[420px] py-3 pl-[50px] pr-4 border border-neutral-light-gray rounded-lg"
+                class="flex items-center justify-between absolute left-5 right-5 py-[10px] pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[420px] xl:py-4"
               >
                 <div>
-                  <h4>Online service</h4>
+                  <h4 class="text-sm font-medium">Online service</h4>
                   <p class="text-neutral-cool-gray text-xs">
                     Access to multiplayer games
                   </p>
@@ -201,10 +200,62 @@
                   }}</span
                 >
               </div>
-            </div>
-          </label>
+            </label>
+          </article>
+
+          <article class="mt-[50px] xl:mt-16">
+            <label class="checkbox-box flex gap-4 items-center">
+              <input
+                formControlName="onlineService"
+                class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
+                type="checkbox"
+              />
+              <div
+                class="flex items-center justify-between absolute left-5 right-5 py-[10px] pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[420px] xl:py-4"
+              >
+                <div>
+                  <h4 class="text-sm font-medium">Larger Storage</h4>
+                  <p class="text-neutral-cool-gray text-xs">
+                    Extra 1TB of cloud save
+                  </p>
+                </div>
+
+                <span class="text-primary-purplish-blue text-xs"
+                  >+${{ storage }}/{{
+                    billingPeriod === "monthly" ? "mo" : "yr"
+                  }}</span
+                >
+              </div>
+            </label>
+          </article>
+
+          <article class="mt-[50px] xl:mt-16">
+            <label class="checkbox-box flex gap-4 items-center">
+              <input
+                formControlName="customProfile"
+                class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
+                type="checkbox"
+              />
+              <div
+                class="flex items-center justify-between absolute left-5 right-5 py-[10px] pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[420px] xl:py-4"
+              >
+                <div>
+                  <h4 class="text-sm font-medium">Customizable Profile</h4>
+                  <p class="text-neutral-cool-gray text-xs">
+                    Custom theme on your profile
+                  </p>
+                </div>
+
+                <span class="text-primary-purplish-blue text-xs"
+                  >+${{ customProfile }}/{{
+                    billingPeriod === "monthly" ? "mo" : "yr"
+                  }}</span
+                >
+              </div>
+            </label>
+          </article>
         </div>
-      </div>
+      </section>
 
       <!-- Summary -->
       <div *ngIf="currentStep === 4 && !lastPage" class="xl:min-w-[420px]">

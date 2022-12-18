@@ -28,6 +28,7 @@ export class MultistepFormComponent implements OnInit {
   onlineService = 1;
   storage = 2;
   customProfile = 2;
+  total = 0;
 
   ngOnInit(): void {
     this.form = new FormGroup({
@@ -70,6 +71,28 @@ export class MultistepFormComponent implements OnInit {
     console.log(this.form);
     this.lastPage = true;
     console.log(this.form.controls['billing-period']);
+    if (this.form.get('plan')?.value === 'arcadePlan') {
+      this.total =
+        this.arcadePlan +
+        (this.form.get('onlineService')?.value && this.onlineService) +
+        (this.form.get('storage')?.value && this.storage) +
+        (this.form.get('customProfile')?.value && this.customProfile);
+      console.log(this.total);
+    } else if (this.form.get('plan')?.value === 'advanced') {
+      this.total =
+        this.advancedPlan +
+        (this.form.get('onlineService')?.value && this.onlineService) +
+        (this.form.get('storage')?.value && this.storage) +
+        (this.form.get('customProfile')?.value && this.customProfile);
+      console.log(this.total);
+    } else {
+      this.total =
+        this.proPlan +
+        (this.form.get('onlineService')?.value && this.onlineService) +
+        (this.form.get('storage')?.value && this.storage) +
+        (this.form.get('customProfile')?.value && this.customProfile);
+      console.log(this.total);
+    }
   }
 
   changePage(isNextPage: boolean) {

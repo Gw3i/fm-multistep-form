@@ -190,6 +190,7 @@
                 formControlName="onlineService"
                 class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
                 type="checkbox"
+                value="1"
               />
               <div
                 class="flex items-center justify-between absolute left-5 right-5 py-[10px] pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[420px] xl:py-4"
@@ -215,6 +216,7 @@
                 formControlName="storage"
                 class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
                 type="checkbox"
+                value="2"
               />
               <div
                 class="flex items-center justify-between absolute left-5 right-5 py-[10px] pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[420px] xl:py-4"
@@ -241,6 +243,7 @@
                 formControlName="customProfile"
                 class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
                 type="checkbox"
+                value="2"
               />
               <div
                 class="flex items-center justify-between absolute left-5 right-5 py-[10px] pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[420px] xl:py-4"
@@ -332,6 +335,9 @@
 
         <div class="flex justify-between items-center py-5 px-4">
           <h3 class="text-neutral-cool-gray text-sm">Total (per month)</h3>
+          <pre>{{ form.get("onlineService")?.value }}</pre>
+          <pre>{{ form.get("storage")?.value }}</pre>
+          <pre>{{ form.get("customProfile")?.value }}</pre>
           <p class="text-primary-purplish-blue font-bold">+$12/mo</p>
         </div>
       </div>

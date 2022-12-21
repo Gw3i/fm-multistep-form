@@ -74,28 +74,21 @@ export class MultiStepFormComponent implements OnInit {
   }
 
   changePage(isNextPage: boolean) {
+    const addOns =
+      (this.form.get('onlineService')?.value && this.onlineService) +
+      (this.form.get('storage')?.value && this.storage) +
+      (this.form.get('customProfile')?.value && this.customProfile);
+
     if (!isNextPage) {
       return this.currentStep--;
     } else {
       if (this.currentStep === 3) {
         if (this.form.get('plan')?.value === 'arcadePlan') {
-          this.total =
-            this.arcadePlan +
-            (this.form.get('onlineService')?.value && this.onlineService) +
-            (this.form.get('storage')?.value && this.storage) +
-            (this.form.get('customProfile')?.value && this.customProfile);
+          this.total = this.arcadePlan + addOns;
         } else if (this.form.get('plan')?.value === 'advanced') {
-          this.total =
-            this.advancedPlan +
-            (this.form.get('onlineService')?.value && this.onlineService) +
-            (this.form.get('storage')?.value && this.storage) +
-            (this.form.get('customProfile')?.value && this.customProfile);
+          this.total = this.advancedPlan + addOns;
         } else {
-          this.total =
-            this.proPlan +
-            (this.form.get('onlineService')?.value && this.onlineService) +
-            (this.form.get('storage')?.value && this.storage) +
-            (this.form.get('customProfile')?.value && this.customProfile);
+          this.total = this.proPlan + addOns;
         }
       }
       return this.currentStep++;

@@ -9,15 +9,15 @@ import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { StepperComponent } from '../stepper/stepper.component';
 
 @Component({
-  selector: 'app-multistep-form',
+  selector: 'app-multi-step-form',
   standalone: true,
   imports: [CommonModule, StepperComponent, ReactiveFormsModule],
-  templateUrl: './multistep-form.component.html',
-  styleUrls: ['./multistep-form.component.scss'],
+  templateUrl: './multi-step-form.component.html',
+  styleUrls: ['./multi-step-form.component.scss'],
   encapsulation: ViewEncapsulation.None,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class MultistepFormComponent implements OnInit {
+export class MultiStepFormComponent implements OnInit {
   currentStep = 2;
   lastPage = false;
   form!: FormGroup;

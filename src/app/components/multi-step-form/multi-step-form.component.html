@@ -10,7 +10,7 @@
   <form
     [formGroup]="form"
     (ngSubmit)="onSubmit()"
-    class="absolute top-24 rounded-lg bg-neutral-white py-8 px-6 mx-5 xl:flex xl:w-[65%] xl:p-7"
+    class="absolute top-[100px] rounded-lg bg-neutral-white py-8 px-6 mx-5 xl:flex xl:w-[65%] xl:p-7"
   >
     <app-stepper
       [currentStep]="currentStep"
@@ -257,8 +257,8 @@
       <!-- Step 3 -->
 
       <section *ngIf="currentStep === 3" class="xl:min-w-[420px]">
-        <h2 class="text-2xl font-bold xl:mb-2">Pick add-ons</h2>
-        <p class="text-neutral-cool-gray mb-3 xl:mb-7">
+        <h2 class="text-2xl font-bold mb-2">Pick add-ons</h2>
+        <p class="text-neutral-cool-gray mb-5 xl:mb-7">
           Add-ons help enhance your gaming experience.
         </p>
 
@@ -272,7 +272,7 @@
                 value="1"
               />
               <div
-                class="flex items-center justify-between absolute left-5 right-5 py-[10px] pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[420px] xl:py-4"
+                class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[420px] xl:py-4"
               >
                 <div>
                   <h4 class="text-sm font-medium">Online service</h4>
@@ -289,7 +289,7 @@
             </label>
           </article>
 
-          <article class="mt-[50px] xl:mt-16">
+          <article class="mt-[54px] xl:mt-16">
             <label class="checkbox-box flex gap-4 items-center">
               <input
                 formControlName="storage"
@@ -298,7 +298,7 @@
                 value="2"
               />
               <div
-                class="flex items-center justify-between absolute left-5 right-5 py-[10px] pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[420px] xl:py-4"
+                class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[420px] xl:py-4"
               >
                 <div>
                   <h4 class="text-sm font-medium">Larger Storage</h4>
@@ -316,7 +316,7 @@
             </label>
           </article>
 
-          <article class="mt-[50px] xl:mt-16">
+          <article class="mt-[54px] xl:mt-16">
             <label class="checkbox-box flex gap-4 items-center">
               <input
                 formControlName="customProfile"
@@ -325,7 +325,7 @@
                 value="2"
               />
               <div
-                class="flex items-center justify-between absolute left-5 right-5 py-[10px] pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[420px] xl:py-4"
+                class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[420px] xl:py-4"
               >
                 <div>
                   <h4 class="text-sm font-medium">Customizable Profile</h4>
@@ -446,7 +446,7 @@
 
       <div
         *ngIf="!lastPage"
-        class="fixed bottom-0 w-screen left-0 p-5 flex justify-between bg-neutral-white xl:relative xl:p-0 xl:mb-5 xl:min-w-[420px] xl:max-w-[420px]"
+        class="fixed bottom-0 w-screen left-0 p-5 text-sm flex justify-between bg-neutral-white xl:relative xl:p-0 xl:mb-5 xl:min-w-[420px] xl:max-w-[420px]"
         [ngClass]="{ 'flex-row-reverse': currentStep === 1 }"
       >
         <button
@@ -455,21 +455,21 @@
           type="button"
           class="text-neutral-cool-gray px-3 py-2 rounded hover:text-primary-marine"
         >
-          Back
+          Go Back
         </button>
         <button
           [disabled]="form.invalid"
           *ngIf="currentStep !== 4"
           (click)="changePage(true)"
           type="button"
-          class="bg-primary-marine text-neutral-magnolia px-3 py-2 rounded disabled:bg-neutral-cool-gray hover:bg-opacity-90"
+          class="bg-primary-marine text-neutral-magnolia px-5 py-3 rounded disabled:bg-neutral-cool-gray hover:bg-opacity-90"
         >
-          Next step
+          Next Step
         </button>
         <button
           *ngIf="currentStep === 4"
           type="submit"
-          class="bg-primary-purplish-blue text-neutral-magnolia px-3 py-2 rounded hover:bg-opacity-90"
+          class="bg-primary-purplish-blue text-neutral-magnolia px-5 py-3 rounded hover:bg-opacity-90"
         >
           Confirm
         </button>

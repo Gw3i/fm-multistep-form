@@ -5,7 +5,12 @@ import {
   OnInit,
   ViewEncapsulation,
 } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormControl,
+  FormGroup,
+  ReactiveFormsModule,
+  Validators,
+} from '@angular/forms';
 import { StepperComponent } from '../stepper/stepper.component';
 
 @Component({
@@ -18,7 +23,7 @@ import { StepperComponent } from '../stepper/stepper.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MultiStepFormComponent implements OnInit {
-  currentStep = 2;
+  currentStep = 1;
   lastPage = false;
   form!: FormGroup;
   billingPeriod: 'monthly' | 'yearly' = 'monthly';
@@ -32,9 +37,18 @@ export class MultiStepFormComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = new FormGroup({
-      name: new FormControl(null),
-      email: new FormControl(null),
-      phone: new FormControl(null),
+      name: new FormControl(null, [
+        Validators.required,
+        Validators.minLength(2),
+        Validators.pattern("^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"),
+      ]),
+      email: new FormControl(null, [Validators.required, Validators.email]),
+      phone: new FormControl(null, [
+        Validators.required,
+        Validators.pattern(
+          '^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$'
+        ),
+      ]),
 
       plan: new FormControl('arcadePlan'),
 
@@ -68,9 +82,8 @@ export class MultiStepFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form);
     this.lastPage = true;
-    console.log(this.form.controls['billing-period']);
+    this.form.reset();
   }
 
   changePage(isNextPage: boolean) {

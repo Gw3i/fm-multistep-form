@@ -6,4 +6,10 @@ app-multi-step-form {
     border-radius: 8px;
     transition: none;
   }
+
+  .checkbox-box:hover input[type="checkbox"] ~ div,
+  .checkbox-box:hover input[type="radio"] ~ div {
+    border: 1px solid hsl(243, 100%, 62%);
+    cursor: pointer;
+  }
 }

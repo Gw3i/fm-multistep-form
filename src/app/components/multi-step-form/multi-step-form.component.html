@@ -429,7 +429,7 @@
           *ngIf="currentStep >= 2"
           (click)="changePage(false)"
           type="button"
-          class="text-neutral-cool-gray px-3 py-2 rounded"
+          class="text-neutral-cool-gray px-3 py-2 rounded hover:text-primary-marine"
         >
           Back
         </button>
@@ -438,14 +438,14 @@
           *ngIf="currentStep !== 4"
           (click)="changePage(true)"
           type="button"
-          class="bg-primary-marine text-neutral-magnolia px-3 py-2 rounded disabled:bg-neutral-cool-gray"
+          class="bg-primary-marine text-neutral-magnolia px-3 py-2 rounded disabled:bg-neutral-cool-gray hover:bg-opacity-90"
         >
           Next step
         </button>
         <button
           *ngIf="currentStep === 4"
           type="submit"
-          class="bg-primary-purplish-blue text-neutral-magnolia px-3 py-2 rounded"
+          class="bg-primary-purplish-blue text-neutral-magnolia px-3 py-2 rounded hover:bg-opacity-90"
         >
           Confirm
         </button>

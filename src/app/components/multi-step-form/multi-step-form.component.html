@@ -32,25 +32,77 @@
           Please provide your name, email address, and phone number.
         </p>
         <div class="flex flex-col gap-1 text-xs mt-3">
-          <label>Name </label>
+          <div class="flex justify-between">
+            <label>Name</label>
+            <p
+              class="text-primary-strawberry-red font-semibold"
+              *ngIf="
+                form.controls['name'].invalid &&
+                (form.controls['name'].dirty || form.controls['name'].touched)
+              "
+            >
+              This field is required
+            </p>
+          </div>
           <input
+            [ngClass]="{
+              'border-primary-strawberry-red':
+                form.controls['name'].invalid &&
+                (form.controls['name'].dirty || form.controls['name'].touched)
+            }"
             formControlName="name"
-            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue focus:invalid:border-primary-strawberry-red p-2 rounded-md placeholder:font-medium"
+            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-2 rounded-md placeholder:font-medium"
             type="text"
+            required
             placeholder="e.g. Stephen King"
           />
-          <label class="mt-2">Email Address </label>
+
+          <div class="flex justify-between mt-2">
+            <label>Email Address</label>
+            <p
+              class="text-primary-strawberry-red font-semibold"
+              *ngIf="
+                form.controls['email'].invalid &&
+                (form.controls['email'].dirty || form.controls['email'].touched)
+              "
+            >
+              This field is required
+            </p>
+          </div>
           <input
+            [ngClass]="{
+              'border-primary-strawberry-red':
+                form.controls['email'].invalid &&
+                (form.controls['email'].dirty || form.controls['email'].touched)
+            }"
             formControlName="email"
-            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue focus:invalid:border-primary-strawberry-red p-2 rounded-md placeholder:font-medium"
+            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-2 rounded-md placeholder:font-medium"
             type="email"
+            required
             placeholder="e.g. stephenking@lorem.com"
           />
-          <label class="mt-2">Phone Number </label>
+          <div class="flex justify-between mt-2">
+            <label>Phone Number</label>
+            <p
+              class="text-primary-strawberry-red font-semibold"
+              *ngIf="
+                form.controls['phone'].invalid &&
+                (form.controls['phone'].dirty || form.controls['phone'].touched)
+              "
+            >
+              This field is required
+            </p>
+          </div>
           <input
+            [ngClass]="{
+              'border-primary-strawberry-red':
+                form.controls['phone'].invalid &&
+                (form.controls['phone'].dirty || form.controls['phone'].touched)
+            }"
             formControlName="phone"
-            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue focus:invalid:border-primary-strawberry-red p-2 rounded-md placeholder:font-medium"
+            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-2 rounded-md placeholder:font-medium"
             type="number"
+            required
             placeholder="e.g. +1 234 567 890"
           />
         </div>

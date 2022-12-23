@@ -1,7 +1,7 @@
-<section class="pt-7 flex justify-center gap-2 xl:flex-col xl:gap-6">
+<section class="pt-7 flex justify-center gap-4 xl:flex-col xl:gap-6">
   <div *ngFor="let step of steps" class="xl:flex xl:items-center xl:gap-4">
     <div
-      class="border font-bold text-primary-light-blue rounded-full w-8 h-8 flex justify-center items-center"
+      class="border font-semibold text-sm text-primary-light-blue rounded-full w-8 h-8 flex justify-center items-center"
       [ngClass]="{
         'bg-primary-light-blue border-none': currentStep === step
       }"

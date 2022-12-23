@@ -1,5 +1,5 @@
-<div class="xl:flex xl:justify-center">
-  <picture class="absolute -z-[1] top-0 left-0 xl:hidden">
+<div class="flex justify-center">
+  <picture class="absolute -z-[1] top-0 left-0 w-full xl:hidden">
     <img
       src="assets/images/bg-sidebar-mobile.svg"
       alt="background image"
@@ -14,9 +14,9 @@
   >
     <app-stepper
       [currentStep]="currentStep"
-      class="xs:hidden xl:block absolute xl:ml-8"
+      class="hidden xl:block absolute xl:ml-8"
     ></app-stepper>
-    <picture class="xs:hidden xl:block">
+    <picture class="hidden xl:block">
       <img
         src="assets/images/bg-sidebar-desktop.svg"
         alt="background image"
@@ -24,7 +24,10 @@
         class="rounded-lg"
       />
     </picture>
-    <div class="xl:mx-auto xl:mt-10 xl:max-w-[420px]">
+
+    <div
+      class="xl:flex xl:flex-col xl:justify-between xl:mx-auto xl:mt-10 xl:max-w-[420px]"
+    >
       <!-- Step 1 -->
       <div *ngIf="currentStep === 1">
         <h2 class="text-2xl font-bold">Personal Info</h2>
@@ -51,7 +54,7 @@
                 (form.controls['name'].dirty || form.controls['name'].touched)
             }"
             formControlName="name"
-            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-2 rounded-md placeholder:font-medium"
+            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-[10px] rounded-md placeholder:font-medium"
             type="text"
             required
             placeholder="e.g. Stephen King"
@@ -76,7 +79,7 @@
                 (form.controls['email'].dirty || form.controls['email'].touched)
             }"
             formControlName="email"
-            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-2 rounded-md placeholder:font-medium"
+            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-[10px] rounded-md placeholder:font-medium"
             type="email"
             required
             placeholder="e.g. stephenking@lorem.com"
@@ -100,7 +103,7 @@
                 (form.controls['phone'].dirty || form.controls['phone'].touched)
             }"
             formControlName="phone"
-            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-2 rounded-md placeholder:font-medium"
+            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-[10px] rounded-md placeholder:font-medium"
             type="number"
             required
             placeholder="e.g. +1 234 567 890"
@@ -338,7 +341,10 @@
                 }}
                 ({{ billingPeriod === "monthly" ? "Monthly" : "Yearly" }})
               </h4>
-              <a href="#" type="button" class="underline text-neutral-cool-gray"
+              <a
+                href="#"
+                type="button"
+                class="underline text-neutral-cool-gray hover:text-primary-purplish-blue"
                 >Change</a
               >
             </div>
@@ -390,7 +396,7 @@
             Total (per {{ billingPeriod === "monthly" ? "month" : "year" }})
           </h3>
 
-          <p class="text-primary-purplish-blue font-bold">
+          <p class="text-primary-purplish-blue text-lg font-bold">
             +${{ total }}/{{ billingPeriod === "monthly" ? "mo" : "yr" }}
           </p>
         </div>
@@ -416,7 +422,7 @@
 
       <div
         *ngIf="!lastPage"
-        class="fixed bottom-0 w-screen left-0 p-5 xl:absolute xl:p-0 flex xl:bottom-10 xl:left-[395px] justify-between bg-neutral-white xl:min-w-[420px] xl:max-w-[420px]"
+        class="fixed bottom-0 w-screen left-0 p-5 flex justify-between bg-neutral-white xl:relative xl:p-0 xl:mb-5 xl:min-w-[420px] xl:max-w-[420px]"
         [ngClass]="{ 'flex-row-reverse': currentStep === 1 }"
       >
         <button

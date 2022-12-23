@@ -45,7 +45,9 @@ export class MultiStepFormComponent implements OnInit {
       email: new FormControl(null, [Validators.required, Validators.email]),
       phone: new FormControl(null, [
         Validators.required,
-        Validators.maxLength(20),
+        Validators.pattern(
+          '^[+]?[(]?[0-9]{3}[)]?[-s.]?[0-9]{3}[-s.]?[0-9]{4,6}$'
+        ),
       ]),
 
       plan: new FormControl('arcadePlan'),
@@ -80,9 +82,8 @@ export class MultiStepFormComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.form);
     this.lastPage = true;
-    console.log(this.form.controls['billing-period']);
+    this.form.reset();
   }
 
   changePage(isNextPage: boolean) {

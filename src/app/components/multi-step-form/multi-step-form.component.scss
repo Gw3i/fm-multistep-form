@@ -2,14 +2,14 @@ app-multi-step-form {
   .checkbox-box input[type="checkbox"]:checked ~ div,
   .checkbox-box input[type="radio"]:checked ~ div {
     background-color: hsl(231, 100%, 99%);
-    border: 1px solid hsl(243, 100%, 62%);
-    border-radius: 8px;
+    border: 0.063rem solid hsl(243, 100%, 62%);
+    border-radius: 0.5rem;
     transition: none;
   }
 
   .checkbox-box:hover input[type="checkbox"] ~ div,
   .checkbox-box:hover input[type="radio"] ~ div {
-    border: 1px solid hsl(243, 100%, 62%);
+    border: 0.063rem solid hsl(243, 100%, 62%);
     cursor: pointer;
   }
 }

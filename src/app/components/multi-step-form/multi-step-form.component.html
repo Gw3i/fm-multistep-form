@@ -26,17 +26,17 @@
     </picture>
 
     <div
-      class="xl:flex xl:flex-col xl:justify-between xl:mx-auto xl:mt-10 xl:max-w-[420px]"
+      class="xl:flex xl:flex-col xl:justify-between xl:mx-auto xl:mt-10 xl:max-w-[450px]"
     >
       <!-- Step 1 -->
       <div *ngIf="currentStep === 1">
-        <h2 class="text-2xl mb-2 font-bold">Personal info</h2>
-        <p class="text-neutral-cool-gray mb-5">
+        <h2 class="text-2xl mb-2 font-bold xl:text-3xl">Personal info</h2>
+        <p class="text-neutral-cool-gray mb-5 xl:mb-8">
           Please provide your name, email address, and phone number.
         </p>
         <div class="flex flex-col gap-1 text-xs">
           <div class="flex justify-between">
-            <label>Name</label>
+            <label class="xl:text-base">Name</label>
             <p
               class="text-primary-strawberry-red font-semibold"
               *ngIf="
@@ -54,14 +54,14 @@
                 (form.controls['name'].dirty || form.controls['name'].touched)
             }"
             formControlName="name"
-            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-[10px] rounded-md placeholder:font-medium"
+            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-[10px] rounded-md placeholder:font-medium xl:py-4 xl:placeholder:text-lg xl:placeholder:font-normal"
             type="text"
             required
             placeholder="e.g. Stephen King"
           />
 
-          <div class="flex justify-between mt-2">
-            <label>Email Address</label>
+          <div class="flex justify-between mt-2 xl:mt-5">
+            <label class="xl:text-base">Email Address</label>
             <p
               class="text-primary-strawberry-red font-semibold"
               *ngIf="
@@ -79,13 +79,13 @@
                 (form.controls['email'].dirty || form.controls['email'].touched)
             }"
             formControlName="email"
-            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-[10px] rounded-md placeholder:font-medium"
+            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-[10px] rounded-md placeholder:font-medium xl:py-4 xl:placeholder:text-lg xl:placeholder:font-normal"
             type="email"
             required
             placeholder="e.g. stephenking@lorem.com"
           />
-          <div class="flex justify-between mt-2">
-            <label>Phone Number</label>
+          <div class="flex justify-between mt-2 xl:mt-5">
+            <label class="xl:text-base">Phone Number</label>
             <p
               class="text-primary-strawberry-red font-semibold"
               *ngIf="
@@ -103,7 +103,7 @@
                 (form.controls['phone'].dirty || form.controls['phone'].touched)
             }"
             formControlName="phone"
-            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-[10px] rounded-md placeholder:font-medium"
+            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-[10px] rounded-md placeholder:font-medium xl:py-4 xl:placeholder:text-lg xl:placeholder:font-normal"
             type="number"
             required
             placeholder="e.g. +1 234 567 890"
@@ -114,7 +114,7 @@
       <!-- Step 2 -->
 
       <div *ngIf="currentStep === 2">
-        <h2 class="text-2xl font-bold mb-2">Select your plan</h2>
+        <h2 class="text-2xl font-bold mb-2 xl:text-3xl">Select your plan</h2>
         <p class="text-neutral-cool-gray mb-5 xl:mb-7">
           You have the option of monthly or yearly billing.
         </p>
@@ -256,23 +256,23 @@
 
       <!-- Step 3 -->
 
-      <section *ngIf="currentStep === 3" class="xl:min-w-[420px]">
-        <h2 class="text-2xl font-bold mb-2">Pick add-ons</h2>
-        <p class="text-neutral-cool-gray mb-5 xl:mb-7">
+      <section *ngIf="currentStep === 3" class="xl:min-w-[450px]">
+        <h2 class="text-2xl font-bold mb-2 xl:text-3xl">Pick add-ons</h2>
+        <p class="text-neutral-cool-gray mb-5 xl:mb-8">
           Add-ons help enhance your gaming experience.
         </p>
 
-        <div class="w-full mt-12 mb-6 xl:relative xl:left-0">
+        <div class="w-full mt-16 mb-6 xl:relative xl:left-0">
           <article>
             <label class="checkbox-box flex gap-4 items-center">
               <input
                 formControlName="onlineService"
-                class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
+                class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4 xl:left-7"
                 type="checkbox"
                 value="1"
               />
               <div
-                class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[420px] xl:py-4"
+                class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[450px] xl:py-[18px] xl:pr-7 xl:pl-[62px]"
               >
                 <div>
                   <h4 class="text-sm font-medium">Online service</h4>
@@ -289,16 +289,16 @@
             </label>
           </article>
 
-          <article class="mt-[54px] xl:mt-16">
+          <article class="mt-[54px] xl:mt-[70px]">
             <label class="checkbox-box flex gap-4 items-center">
               <input
                 formControlName="storage"
-                class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
+                class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4 xl:left-7"
                 type="checkbox"
                 value="2"
               />
               <div
-                class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[420px] xl:py-4"
+                class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[450px] xl:py-[18px] xl:pr-7 xl:pl-[62px]"
               >
                 <div>
                   <h4 class="text-sm font-medium">Larger Storage</h4>
@@ -316,16 +316,16 @@
             </label>
           </article>
 
-          <article class="mt-[54px] xl:mt-16">
+          <article class="mt-[54px] xl:mt-[70px]">
             <label class="checkbox-box flex gap-4 items-center">
               <input
                 formControlName="customProfile"
-                class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4"
+                class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4 xl:left-7"
                 type="checkbox"
                 value="2"
               />
               <div
-                class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[420px] xl:py-4"
+                class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[450px] xl:py-[18px] xl:pr-7 xl:pl-[62px]"
               >
                 <div>
                   <h4 class="text-sm font-medium">Customizable Profile</h4>
@@ -347,12 +347,14 @@
 
       <!-- Summary -->
       <div *ngIf="currentStep === 4 && !lastPage" class="xl:min-w-[420px]">
-        <h2 class="text-2xl font-bold mb-2">Finishing up</h2>
-        <p class="text-neutral-cool-gray mb-5 xl:mb-7">
+        <h2 class="text-2xl font-bold mb-2 xl:text-3xl">Finishing up</h2>
+        <p class="text-neutral-cool-gray mb-5 xl:mb-8">
           Double-check everything looks OK before confirming.
         </p>
 
-        <div class="bg-neutral-alabaster py-5 px-4 text-sm rounded-lg">
+        <div
+          class="bg-neutral-alabaster py-5 px-4 text-sm rounded-lg xl:text-base"
+        >
           <div class="flex justify-between items-center">
             <div
               [ngClass]="{
@@ -438,11 +440,11 @@
         </div>
 
         <div class="flex justify-between items-center py-5 px-4">
-          <h3 class="text-neutral-cool-gray text-sm">
+          <h3 class="text-neutral-cool-gray text-sm xl:text-base">
             Total (per {{ billingPeriod === "monthly" ? "month" : "year" }})
           </h3>
 
-          <p class="text-primary-purplish-blue font-bold">
+          <p class="text-primary-purplish-blue font-bold xl:text-lg">
             ${{ total }}/{{ billingPeriod === "monthly" ? "mo" : "yr" }}
           </p>
         </div>
@@ -450,7 +452,7 @@
 
       <!-- Thank you -->
       <div
-        class="flex flex-col py-14 items-center text-center xl:mt-32"
+        class="flex flex-col py-14 items-center text-center xl:mt-16"
         *ngIf="lastPage"
       >
         <img
@@ -468,7 +470,7 @@
 
       <div
         *ngIf="!lastPage"
-        class="fixed bottom-0 w-screen left-0 p-5 text-sm flex justify-between bg-neutral-white xl:relative xl:p-0 xl:mb-5 xl:min-w-[420px] xl:max-w-[420px]"
+        class="fixed bottom-0 w-screen left-0 p-5 text-base flex justify-between bg-neutral-white xl:relative xl:p-0 xl:mb-5 xl:min-w-[450px] xl:max-w-[450px]"
         [ngClass]="{ 'flex-row-reverse': currentStep === 1 }"
       >
         <button
@@ -484,14 +486,14 @@
           *ngIf="currentStep !== 4"
           (click)="changePage(true)"
           type="button"
-          class="bg-primary-marine text-neutral-magnolia px-5 py-3 rounded disabled:bg-neutral-cool-gray hover:bg-opacity-90"
+          class="bg-primary-marine text-neutral-magnolia px-5 py-2 rounded disabled:bg-neutral-cool-gray hover:bg-opacity-90 xl:px-7 xl:py-3 xl:rounded-lg"
         >
           Next Step
         </button>
         <button
           *ngIf="currentStep === 4"
           type="submit"
-          class="bg-primary-purplish-blue text-neutral-magnolia px-6 py-[10px] rounded hover:bg-opacity-90"
+          class="bg-primary-purplish-blue text-neutral-magnolia px-6 py-[10px] rounded hover:bg-opacity-90 xl:px-7 xl:py-3 xl:rounded-lg"
         >
           Confirm
         </button>

@@ -23,7 +23,7 @@ import { StepperComponent } from '../stepper/stepper.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class MultiStepFormComponent implements OnInit {
-  currentStep = 1;
+  currentStep = 4;
   lastPage = false;
   form!: FormGroup;
   billingPeriod: 'monthly' | 'yearly' = 'monthly';
@@ -33,7 +33,7 @@ export class MultiStepFormComponent implements OnInit {
   onlineService = 1;
   storage = 2;
   customProfile = 2;
-  total = 0;
+  total = 9;
 
   ngOnInit(): void {
     this.form = new FormGroup({

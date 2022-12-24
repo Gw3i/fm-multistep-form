@@ -30,11 +30,11 @@
     >
       <!-- Step 1 -->
       <div *ngIf="currentStep === 1">
-        <h2 class="text-2xl font-bold">Personal info</h2>
-        <p class="text-neutral-cool-gray">
+        <h2 class="text-2xl mb-2 font-bold">Personal info</h2>
+        <p class="text-neutral-cool-gray mb-5">
           Please provide your name, email address, and phone number.
         </p>
-        <div class="flex flex-col gap-1 text-xs mt-3">
+        <div class="flex flex-col gap-1 text-xs">
           <div class="flex justify-between">
             <label>Name</label>
             <p
@@ -347,15 +347,22 @@
 
       <!-- Summary -->
       <div *ngIf="currentStep === 4 && !lastPage" class="xl:min-w-[420px]">
-        <h2 class="text-2xl font-bold xl:mb-2">Finishing up</h2>
-        <p class="text-neutral-cool-gray mb-3 xl:mb-7">
+        <h2 class="text-2xl font-bold mb-2">Finishing up</h2>
+        <p class="text-neutral-cool-gray mb-5 xl:mb-7">
           Double-check everything looks OK before confirming.
         </p>
 
-        <div class="bg-neutral-magnolia py-5 px-4 text-sm rounded-lg">
+        <div class="bg-neutral-alabaster py-5 px-4 text-sm rounded-lg">
           <div class="flex justify-between items-center">
-            <div class="mb-3">
-              <h4 class="text-primary-marine font-semibold">
+            <div
+              [ngClass]="{
+                'mb-3':
+                  form.get('onlineService')?.value ||
+                  form.get('storage')?.value ||
+                  form.get('customProfile')?.value
+              }"
+            >
+              <h4 class="text-primary-marine font-medium">
                 {{
                   form.get("plan")?.value === "arcadePlan"
                     ? "Arcade"
@@ -382,8 +389,23 @@
               }}/{{ billingPeriod === "monthly" ? "mo" : "yr" }}
             </p>
           </div>
-          <hr class="text-neutral-cool-gray" />
-          <ul class="text-neutral-cool-gray mt-3 flex flex-col gap-2">
+          <hr
+            *ngIf="
+              form.get('onlineService')?.value ||
+              form.get('storage')?.value ||
+              form.get('customProfile')?.value
+            "
+            class="text-neutral-cool-gray"
+          />
+          <ul
+            [ngClass]="{
+              'mt-3':
+                form.get('onlineService')?.value ||
+                form.get('storage')?.value ||
+                form.get('customProfile')?.value
+            }"
+            class="text-neutral-cool-gray flex flex-col gap-2"
+          >
             <li
               *ngIf="form.get('onlineService')?.value"
               class="flex justify-between"
@@ -420,19 +442,19 @@
             Total (per {{ billingPeriod === "monthly" ? "month" : "year" }})
           </h3>
 
-          <p class="text-primary-purplish-blue text-lg font-bold">
-            +${{ total }}/{{ billingPeriod === "monthly" ? "mo" : "yr" }}
+          <p class="text-primary-purplish-blue font-bold">
+            ${{ total }}/{{ billingPeriod === "monthly" ? "mo" : "yr" }}
           </p>
         </div>
       </div>
 
       <!-- Thank you -->
       <div
-        class="flex flex-col items-center text-center xl:mt-32"
+        class="flex flex-col py-14 items-center text-center xl:mt-32"
         *ngIf="lastPage"
       >
         <img
-          class="w-14 mb-4 xl:w-[84px] xl:mb-8"
+          class="w-14 mb-6 xl:w-[84px] xl:mb-8"
           src="assets/images/icon-thank-you.svg"
           alt=""
         />
@@ -458,7 +480,7 @@
           Go Back
         </button>
         <button
-          [disabled]="form.invalid"
+          [disabled]="!form.invalid"
           *ngIf="currentStep !== 4"
           (click)="changePage(true)"
           type="button"
@@ -469,7 +491,7 @@
         <button
           *ngIf="currentStep === 4"
           type="submit"
-          class="bg-primary-purplish-blue text-neutral-magnolia px-5 py-3 rounded hover:bg-opacity-90"
+          class="bg-primary-purplish-blue text-neutral-magnolia px-6 py-[10px] rounded hover:bg-opacity-90"
         >
           Confirm
         </button>

@@ -10,7 +10,7 @@
   <form
     [formGroup]="form"
     (ngSubmit)="onSubmit()"
-    class="absolute top-[100px] rounded-lg bg-neutral-white py-8 px-6 mx-5 xl:flex xl:w-[65%] xl:p-7"
+    class="absolute top-[6.25rem] rounded-lg bg-neutral-white py-8 px-6 mx-5 xl:flex xl:w-[65%] xl:p-7"
   >
     <app-stepper
       [currentStep]="currentStep"
@@ -26,7 +26,7 @@
     </picture>
 
     <div
-      class="xl:flex xl:flex-col xl:justify-between xl:mx-auto xl:mt-10 xl:max-w-[450px]"
+      class="xl:flex xl:flex-col xl:justify-between xl:mx-auto xl:mt-10 xl:max-w-[28.125rem]"
     >
       <!-- Step 1 -->
       <div *ngIf="currentStep === 1">
@@ -54,7 +54,7 @@
                 (form.controls['name'].dirty || form.controls['name'].touched)
             }"
             formControlName="name"
-            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-[10px] rounded-md placeholder:font-medium xl:py-4 xl:placeholder:text-lg xl:placeholder:font-normal"
+            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-[0.625rem] rounded-md placeholder:font-medium xl:py-4 xl:placeholder:text-lg xl:placeholder:font-normal"
             type="text"
             required
             placeholder="e.g. Stephen King"
@@ -79,7 +79,7 @@
                 (form.controls['email'].dirty || form.controls['email'].touched)
             }"
             formControlName="email"
-            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-[10px] rounded-md placeholder:font-medium xl:py-4 xl:placeholder:text-lg xl:placeholder:font-normal"
+            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-[0.625rem] rounded-md placeholder:font-medium xl:py-4 xl:placeholder:text-lg xl:placeholder:font-normal"
             type="email"
             required
             placeholder="e.g. stephenking@lorem.com"
@@ -103,7 +103,7 @@
                 (form.controls['phone'].dirty || form.controls['phone'].touched)
             }"
             formControlName="phone"
-            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-[10px] rounded-md placeholder:font-medium xl:py-4 xl:placeholder:text-lg xl:placeholder:font-normal"
+            class="border border-neutral-light-gray text-primary-marine focus:outline-none focus:border-primary-purplish-blue p-[0.625rem] rounded-md placeholder:font-medium xl:py-4 xl:placeholder:text-lg xl:placeholder:font-normal"
             type="number"
             required
             placeholder="e.g. +1 234 567 890"
@@ -120,20 +120,20 @@
         </p>
 
         <div
-          class="flex flex-col gap-3 xl:flex-row xl:justify-evenly xl:gap-[18px]"
+          class="flex flex-col gap-3 xl:flex-row xl:justify-evenly xl:gap-[1.125rem]"
         >
           <section
             [ngClass]="{
-              'h-24 xl:h-[166px]': billingPeriod === 'yearly'
+              'h-24 xl:h-[10.375rem]': billingPeriod === 'yearly'
             }"
-            class="checkbox-box relative w-full h-20 xl:w-[128px] xl:h-[150px] flex justify-center items-center transition"
+            class="checkbox-box relative w-full h-20 xl:w-[8rem] xl:h-[9.375rem] flex justify-center items-center transition"
           >
             <input
               name="plan"
               value="arcadePlan"
               type="radio"
               id="arcade"
-              class="absolute top-0 left-0 w-full h-20 xl:w-[128px] xl:h-[150px] opacity-0 cursor-pointer"
+              class="absolute top-0 left-0 w-full h-20 xl:w-[8rem] xl:h-[9.375rem] opacity-0 cursor-pointer"
               formControlName="plan"
             />
             <div
@@ -141,7 +141,7 @@
             >
               <img
                 src="assets/images/icon-arcade.svg"
-                class="self-baseline max-w-[40px] xl:max-w-[50px]"
+                class="self-baseline max-w-[2.5rem] xl:max-w-[3.125rem]"
                 alt="arcade icon"
               />
               <div>
@@ -151,7 +151,7 @@
                     billingPeriod === "monthly" ? "mo" : "yr"
                   }}
                 </p>
-                <p *ngIf="billingPeriod === 'yearly'" class="text-xs mt-[2px]">
+                <p *ngIf="billingPeriod === 'yearly'" class="text-xs mt-[0.125rem]">
                   2 months free
                 </p>
               </div>
@@ -159,15 +159,15 @@
           </section>
 
           <section
-            [ngClass]="{ 'h-24 xl:h-[166px]': billingPeriod === 'yearly' }"
-            class="checkbox-box relative w-full h-20 xl:w-[128px] xl:h-[150px] flex justify-center items-center transition"
+            [ngClass]="{ 'h-24 xl:h-[10.375rem]': billingPeriod === 'yearly' }"
+            class="checkbox-box relative w-full h-20 xl:w-[8rem] xl:h-[9.375rem] flex justify-center items-center transition"
           >
             <input
               name="plan"
               value="advancedPlan"
               type="radio"
               id="advanced"
-              class="absolute top-0 left-0 w-full h-20 xl:w-[128px] xl:h-[150px] opacity-0 cursor-pointer"
+              class="absolute top-0 left-0 w-full h-20 xl:w-[8rem] xl:h-[9.375rem] opacity-0 cursor-pointer"
               formControlName="plan"
             />
             <div
@@ -175,7 +175,7 @@
             >
               <img
                 src="assets/images/icon-advanced.svg"
-                class="self-baseline max-w-[40px] xl:max-w-[50px]"
+                class="self-baseline max-w-[2.5rem] xl:max-w-[3.125rem]"
                 alt="advanced icon"
               />
               <div>
@@ -185,7 +185,7 @@
                     billingPeriod === "monthly" ? "mo" : "yr"
                   }}
                 </p>
-                <p *ngIf="billingPeriod === 'yearly'" class="text-xs mt-[2px]">
+                <p *ngIf="billingPeriod === 'yearly'" class="text-xs mt-[0.125rem]">
                   2 months free
                 </p>
               </div>
@@ -193,15 +193,15 @@
           </section>
 
           <section
-            [ngClass]="{ 'h-24 xl:h-[166px]': billingPeriod === 'yearly' }"
-            class="checkbox-box relative w-full h-20 xl:w-[128px] xl:h-[150px] flex justify-center items-center transition"
+            [ngClass]="{ 'h-24 xl:h-[10.375rem]': billingPeriod === 'yearly' }"
+            class="checkbox-box relative w-full h-20 xl:w-[8rem] xl:h-[9.375rem] flex justify-center items-center transition"
           >
             <input
               name="plan"
               value="proPlan"
               type="radio"
               id="pro"
-              class="absolute top-0 left-0 w-full h-20 xl:w-[128px] xl:h-[150px] opacity-0 cursor-pointer"
+              class="absolute top-0 left-0 w-full h-20 xl:w-[8rem] xl:h-[9.375rem] opacity-0 cursor-pointer"
               formControlName="plan"
             />
             <div
@@ -209,7 +209,7 @@
             >
               <img
                 src="assets/images/icon-pro.svg"
-                class="self-baseline max-w-[40px] xl:max-w-[50px]"
+                class="self-baseline max-w-[2.5rem] xl:max-w-[3.125rem]"
                 alt="pro icon"
               />
               <div>
@@ -217,7 +217,7 @@
                 <p class="text-neutral-cool-gray text-sm" id="selectPro">
                   ${{ proPlan }}/{{ billingPeriod === "monthly" ? "mo" : "yr" }}
                 </p>
-                <p *ngIf="billingPeriod === 'yearly'" class="text-xs mt-[2px]">
+                <p *ngIf="billingPeriod === 'yearly'" class="text-xs mt-[0.125rem]">
                   2 months free
                 </p>
               </div>
@@ -243,7 +243,7 @@
               formControlName="billingPeriod"
             />
             <div
-              class="w-9 h-5 bg-primary-marine peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[3px] after:left-[3px] after:bg-neutral-magnolia after:border-gray-300 after:border after:rounded-full after:h-[14px] after:w-[14px] after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
+              class="w-9 h-5 bg-primary-marine peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[0.188rem] after:left-[0.188rem] after:bg-neutral-magnolia after:border-gray-300 after:border after:rounded-full after:h-[0.875rem] after:w-[0.875rem] after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
             ></div>
           </label>
           <p
@@ -258,7 +258,7 @@
 
       <!-- Step 3 -->
 
-      <section *ngIf="currentStep === 3" class="xl:min-w-[450px]">
+      <section *ngIf="currentStep === 3" class="xl:min-w-[28.125rem]">
         <h2 class="text-2xl font-bold mb-2 xl:text-3xl">Pick add-ons</h2>
         <p class="text-neutral-cool-gray mb-5 xl:mb-8">
           Add-ons help enhance your gaming experience.
@@ -269,12 +269,12 @@
             <label class="checkbox-box flex gap-4 items-center">
               <input
                 formControlName="onlineService"
-                class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4 xl:left-7"
+                class="relative z-50 left-4 flex justify-center items-center pb-[0.188rem] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4 xl:left-7"
                 type="checkbox"
                 value="1"
               />
               <div
-                class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[450px] xl:py-[18px] xl:pr-7 xl:pl-[62px]"
+                class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[3.125rem] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[28.125rem] xl:py-[1.125rem] xl:pr-7 xl:pl-[3.875rem]"
               >
                 <div>
                   <h4 class="text-sm font-medium">Online service</h4>
@@ -291,16 +291,16 @@
             </label>
           </article>
 
-          <article class="mt-[54px] xl:mt-[70px]">
+          <article class="mt-[3.375rem] xl:mt-[4.375rem]">
             <label class="checkbox-box flex gap-4 items-center">
               <input
                 formControlName="storage"
-                class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4 xl:left-7"
+                class="relative z-50 left-4 flex justify-center items-center pb-[0.188rem] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4 xl:left-7"
                 type="checkbox"
                 value="2"
               />
               <div
-                class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[450px] xl:py-[18px] xl:pr-7 xl:pl-[62px]"
+                class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[3.125rem] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[28.125rem] xl:py-[1.125rem] xl:pr-7 xl:pl-[3.875rem]"
               >
                 <div>
                   <h4 class="text-sm font-medium">Larger Storage</h4>
@@ -318,16 +318,16 @@
             </label>
           </article>
 
-          <article class="mt-[54px] xl:mt-[70px]">
+          <article class="mt-[3.375rem] xl:mt-[4.375rem]">
             <label class="checkbox-box flex gap-4 items-center">
               <input
                 formControlName="customProfile"
-                class="relative z-50 left-4 flex justify-center items-center pb-[3px] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4 xl:left-7"
+                class="relative z-50 left-4 flex justify-center items-center pb-[0.188rem] form-check-input appearance-none h-5 w-5 border border-neutral-light-gray checked:border-primary-purplish-blue rounded-sm bg-neutral-white checked:bg-primary-purplish-blue checked:before:content-link focus:outline-none transition duration-100 cursor-pointer xl:h-4 xl:w-4 xl:left-7"
                 type="checkbox"
                 value="2"
               />
               <div
-                class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[50px] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[450px] xl:py-[18px] xl:pr-7 xl:pl-[62px]"
+                class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[3.125rem] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[28.125rem] xl:py-[1.125rem] xl:pr-7 xl:pl-[3.875rem]"
               >
                 <div>
                   <h4 class="text-sm font-medium">Customizable Profile</h4>
@@ -348,7 +348,7 @@
       </section>
 
       <!-- Summary -->
-      <div *ngIf="currentStep === 4 && !lastPage" class="xl:min-w-[420px]">
+      <div *ngIf="currentStep === 4 && !lastPage" class="xl:min-w-[26.25rem]">
         <h2 class="text-2xl font-bold mb-2 xl:text-3xl">Finishing up</h2>
         <p class="text-neutral-cool-gray mb-5 xl:mb-8">
           Double-check everything looks OK before confirming.
@@ -458,7 +458,7 @@
         *ngIf="lastPage"
       >
         <img
-          class="w-14 mb-6 xl:w-[84px] xl:mb-8"
+          class="w-14 mb-6 xl:w-[5.25rem] xl:mb-8"
           src="assets/images/icon-thank-you.svg"
           alt=""
         />
@@ -472,7 +472,7 @@
 
       <div
         *ngIf="!lastPage"
-        class="fixed bottom-0 w-screen left-0 p-5 text-base flex justify-between bg-neutral-white xl:relative xl:p-0 xl:mb-5 xl:min-w-[450px] xl:max-w-[450px]"
+        class="fixed bottom-0 w-screen left-0 p-5 text-base flex justify-between bg-neutral-white xl:relative xl:p-0 xl:mb-5 xl:min-w-[28.125rem] xl:max-w-[28.125rem]"
         [ngClass]="{ 'flex-row-reverse': currentStep === 1 }"
       >
         <button
@@ -495,7 +495,7 @@
         <button
           *ngIf="currentStep === 4"
           type="submit"
-          class="bg-primary-purplish-blue text-neutral-magnolia px-6 py-[10px] rounded hover:bg-opacity-90 xl:px-7 xl:py-3 xl:rounded-lg"
+          class="bg-primary-purplish-blue text-neutral-magnolia px-6 py-[0.625rem] rounded hover:bg-opacity-90 xl:px-7 xl:py-3 xl:rounded-lg"
         >
           Confirm
         </button>

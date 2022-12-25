@@ -203,17 +203,19 @@
           <li
             class="checkbox-box relative w-full xl:w-[8rem] flex justify-center items-center transition"
           >
-            <input
-              name="plan"
-              value="proPlan"
-              type="radio"
-              id="pro"
-              [ngClass]="{
-                'h-24 xl:h-[10.375rem]': billingPeriod === 'yearly'
-              }"
-              class="absolute top-0 left-0 w-full h-20 xl:w-[8rem] xl:h-[9.375rem] opacity-0 cursor-pointer"
-              formControlName="plan"
-            />
+            <label>
+              <input
+                name="plan"
+                value="proPlan"
+                type="radio"
+                id="pro"
+                [ngClass]="{
+                  'h-24 xl:h-[10.375rem]': billingPeriod === 'yearly'
+                }"
+                class="absolute top-0 left-0 w-full h-20 xl:w-[8rem] xl:h-[9.375rem] opacity-0 cursor-pointer"
+                formControlName="plan"
+              />
+            </label>
             <div
               class="py-4 px-3 flex gap-3 xl:gap-7 xl:content-between xl:grid w-full h-full transition border rounded-md border-neutral-light-gray"
             >

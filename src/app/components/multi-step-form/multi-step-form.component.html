@@ -30,7 +30,7 @@
     >
       <!-- Step 1 -->
       <section *ngIf="currentStep === 1">
-        <h2 class="text-2xl mb-2 font-bold xl:text-3xl">Personal info</h2>
+        <h1 class="text-2xl mb-2 font-bold xl:text-3xl">Personal info</h1>
         <p class="text-neutral-cool-gray mb-5 xl:mb-8">
           Please provide your name, email address, and phone number.
         </p>
@@ -145,7 +145,7 @@
                 alt="arcade icon"
               />
               <div>
-                <h4 class="font-medium">Arcade</h4>
+                <h3 class="font-medium">Arcade</h3>
                 <p class="text-neutral-cool-gray text-sm" id="selectArcade">
                   ${{ arcadePlan }}/{{
                     billingPeriod === "monthly" ? "mo" : "yr"
@@ -184,7 +184,7 @@
                 alt="advanced icon"
               />
               <div>
-                <h4 class="font-medium">Advanced</h4>
+                <h3 class="font-medium">Advanced</h3>
                 <p class="text-neutral-cool-gray text-sm" id="selectAdvanced">
                   ${{ advancedPlan }}/{{
                     billingPeriod === "monthly" ? "mo" : "yr"
@@ -223,7 +223,7 @@
                 alt="pro icon"
               />
               <div>
-                <h4 class="font-medium">Pro</h4>
+                <h3 class="font-medium">Pro</h3>
                 <p class="text-neutral-cool-gray text-sm" id="selectPro">
                   ${{ proPlan }}/{{ billingPeriod === "monthly" ? "mo" : "yr" }}
                 </p>
@@ -290,7 +290,7 @@
                 class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[3.125rem] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[28.125rem] xl:py-[1.125rem] xl:pr-7 xl:pl-[3.875rem]"
               >
                 <div>
-                  <h4 class="text-sm font-medium">Online service</h4>
+                  <h3 class="text-sm font-medium">Online service</h3>
                   <p class="text-neutral-cool-gray text-xs">
                     Access to multiplayer games
                   </p>
@@ -316,7 +316,7 @@
                 class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[3.125rem] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[28.125rem] xl:py-[1.125rem] xl:pr-7 xl:pl-[3.875rem]"
               >
                 <div>
-                  <h4 class="text-sm font-medium">Larger Storage</h4>
+                  <h3 class="text-sm font-medium">Larger Storage</h3>
                   <p class="text-neutral-cool-gray text-xs">
                     Extra 1TB of cloud save
                   </p>
@@ -343,7 +343,7 @@
                 class="flex items-center justify-between absolute left-5 right-5 py-3 pl-[3.125rem] pr-4 border border-neutral-light-gray rounded-lg xl:left-0 xl:w-[28.125rem] xl:py-[1.125rem] xl:pr-7 xl:pl-[3.875rem]"
               >
                 <div>
-                  <h4 class="text-sm font-medium">Customizable Profile</h4>
+                  <h3 class="text-sm font-medium">Customizable Profile</h3>
                   <p class="text-neutral-cool-gray text-xs">
                     Custom theme on your profile
                   </p>
@@ -382,7 +382,7 @@
                   form.get('customProfile')?.value
               }"
             >
-              <h4 class="text-primary-marine font-medium">
+              <h3 class="text-primary-marine font-medium">
                 {{
                   form.get("plan")?.value === "arcadePlan"
                     ? "Arcade"
@@ -391,7 +391,7 @@
                     : "Pro"
                 }}
                 ({{ billingPeriod === "monthly" ? "Monthly" : "Yearly" }})
-              </h4>
+              </h3>
               <a
                 href="#"
                 type="button"

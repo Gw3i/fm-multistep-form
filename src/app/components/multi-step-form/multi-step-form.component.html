@@ -242,13 +242,13 @@
         <article
           class="flex gap-5 justify-center mt-5 text-neutral-cool-gray bg-neutral-alabaster py-3 rounded-lg font-medium text-sm xl:mt-10"
         >
-          <p
+          <h4
             [ngClass]="{
               'text-primary-marine': billingPeriod === 'monthly'
             }"
           >
             Monthly
-          </p>
+          </h4>
           <label class="inline-flex relative items-center cursor-pointer">
             <input
               (change)="changeBillingPeriod()"
@@ -260,13 +260,13 @@
               class="w-9 h-5 bg-primary-marine peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[0.188rem] after:left-[0.188rem] after:bg-neutral-magnolia after:border-gray-300 after:border after:rounded-full after:h-[0.875rem] after:w-[0.875rem] after:transition-all dark:border-gray-600 peer-checked:bg-blue-600"
             ></div>
           </label>
-          <p
+          <h4
             [ngClass]="{
               'text-primary-marine': billingPeriod === 'yearly'
             }"
           >
             Yearly
-          </p>
+          </h4>
         </article>
       </section>
 

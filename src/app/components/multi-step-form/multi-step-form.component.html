@@ -29,7 +29,7 @@
       class="xl:flex xl:flex-col xl:justify-between xl:mx-auto xl:mt-10 xl:max-w-[28.125rem]"
     >
       <!-- Step 1 -->
-      <div *ngIf="currentStep === 1">
+      <section *ngIf="currentStep === 1">
         <h2 class="text-2xl mb-2 font-bold xl:text-3xl">Personal info</h2>
         <p class="text-neutral-cool-gray mb-5 xl:mb-8">
           Please provide your name, email address, and phone number.
@@ -109,35 +109,35 @@
             placeholder="e.g. +1 234 567 890"
           />
         </div>
-      </div>
+      </section>
 
       <!-- Step 2 -->
 
-      <div *ngIf="currentStep === 2">
+      <section *ngIf="currentStep === 2">
         <h2 class="text-2xl font-bold mb-2 xl:text-3xl">Select your plan</h2>
         <p class="text-neutral-cool-gray mb-5 xl:mb-7">
           You have the option of monthly or yearly billing.
         </p>
 
-        <div
+        <ul
           class="flex flex-col gap-3 xl:flex-row xl:justify-evenly xl:gap-[1.125rem]"
         >
-          <section
-            [ngClass]="{
-              'h-24 xl:h-[10.375rem]': billingPeriod === 'yearly'
-            }"
-            class="checkbox-box relative w-full h-20 xl:w-[8rem] xl:h-[9.375rem] flex justify-center items-center transition"
+          <li
+            class="checkbox-box relative w-full xl:w-[8rem] flex justify-center items-center transition"
           >
             <input
               name="plan"
               value="arcadePlan"
               type="radio"
               id="arcade"
+              [ngClass]="{
+                'h-24 xl:h-[10.375rem]': billingPeriod === 'yearly'
+              }"
               class="absolute top-0 left-0 w-full h-20 xl:w-[8rem] xl:h-[9.375rem] opacity-0 cursor-pointer"
               formControlName="plan"
             />
             <div
-              class="py-4 px-3 flex gap-3 xl:gap-0 xl:content-between xl:grid w-full h-full transition border rounded-md border-neutral-light-gray"
+              class="py-4 px-3 flex gap-3 xl:gap-7 xl:content-between xl:grid w-full h-full transition border rounded-md border-neutral-light-gray"
             >
               <img
                 src="assets/images/icon-arcade.svg"
@@ -151,27 +151,32 @@
                     billingPeriod === "monthly" ? "mo" : "yr"
                   }}
                 </p>
-                <p *ngIf="billingPeriod === 'yearly'" class="text-xs mt-[0.125rem]">
+                <p
+                  *ngIf="billingPeriod === 'yearly'"
+                  class="text-xs mt-[0.125rem]"
+                >
                   2 months free
                 </p>
               </div>
             </div>
-          </section>
+          </li>
 
-          <section
-            [ngClass]="{ 'h-24 xl:h-[10.375rem]': billingPeriod === 'yearly' }"
-            class="checkbox-box relative w-full h-20 xl:w-[8rem] xl:h-[9.375rem] flex justify-center items-center transition"
+          <li
+            class="checkbox-box relative w-full xl:w-[8rem] flex justify-center items-center transition"
           >
             <input
               name="plan"
               value="advancedPlan"
               type="radio"
               id="advanced"
+              [ngClass]="{
+                'h-24 xl:h-[10.375rem]': billingPeriod === 'yearly'
+              }"
               class="absolute top-0 left-0 w-full h-20 xl:w-[8rem] xl:h-[9.375rem] opacity-0 cursor-pointer"
               formControlName="plan"
             />
             <div
-              class="py-4 px-3 flex gap-3 xl:gap-0 xl:content-between xl:grid w-full h-full transition border rounded-md border-neutral-light-gray"
+              class="py-4 px-3 flex gap-3 xl:gap-7 xl:content-between xl:grid w-full h-full transition border rounded-md border-neutral-light-gray"
             >
               <img
                 src="assets/images/icon-advanced.svg"
@@ -185,27 +190,32 @@
                     billingPeriod === "monthly" ? "mo" : "yr"
                   }}
                 </p>
-                <p *ngIf="billingPeriod === 'yearly'" class="text-xs mt-[0.125rem]">
+                <p
+                  *ngIf="billingPeriod === 'yearly'"
+                  class="text-xs mt-[0.125rem]"
+                >
                   2 months free
                 </p>
               </div>
             </div>
-          </section>
+          </li>
 
-          <section
-            [ngClass]="{ 'h-24 xl:h-[10.375rem]': billingPeriod === 'yearly' }"
-            class="checkbox-box relative w-full h-20 xl:w-[8rem] xl:h-[9.375rem] flex justify-center items-center transition"
+          <li
+            class="checkbox-box relative w-full xl:w-[8rem] flex justify-center items-center transition"
           >
             <input
               name="plan"
               value="proPlan"
               type="radio"
               id="pro"
+              [ngClass]="{
+                'h-24 xl:h-[10.375rem]': billingPeriod === 'yearly'
+              }"
               class="absolute top-0 left-0 w-full h-20 xl:w-[8rem] xl:h-[9.375rem] opacity-0 cursor-pointer"
               formControlName="plan"
             />
             <div
-              class="py-4 px-3 flex gap-3 xl:gap-0 xl:content-between xl:grid w-full h-full transition border rounded-md border-neutral-light-gray"
+              class="py-4 px-3 flex gap-3 xl:gap-7 xl:content-between xl:grid w-full h-full transition border rounded-md border-neutral-light-gray"
             >
               <img
                 src="assets/images/icon-pro.svg"
@@ -217,15 +227,18 @@
                 <p class="text-neutral-cool-gray text-sm" id="selectPro">
                   ${{ proPlan }}/{{ billingPeriod === "monthly" ? "mo" : "yr" }}
                 </p>
-                <p *ngIf="billingPeriod === 'yearly'" class="text-xs mt-[0.125rem]">
+                <p
+                  *ngIf="billingPeriod === 'yearly'"
+                  class="text-xs mt-[0.125rem]"
+                >
                   2 months free
                 </p>
               </div>
             </div>
-          </section>
-        </div>
+          </li>
+        </ul>
 
-        <div
+        <article
           class="flex gap-5 justify-center mt-5 text-neutral-cool-gray bg-neutral-alabaster py-3 rounded-lg font-medium text-sm xl:mt-10"
         >
           <p
@@ -253,8 +266,8 @@
           >
             Yearly
           </p>
-        </div>
-      </div>
+        </article>
+      </section>
 
       <!-- Step 3 -->
 
@@ -264,8 +277,8 @@
           Add-ons help enhance your gaming experience.
         </p>
 
-        <div class="w-full mt-16 mb-6 xl:relative xl:left-0">
-          <article>
+        <ul class="w-full mt-16 mb-6 xl:relative xl:left-0">
+          <li>
             <label class="checkbox-box flex gap-4 items-center">
               <input
                 formControlName="onlineService"
@@ -289,9 +302,9 @@
                 >
               </div>
             </label>
-          </article>
+          </li>
 
-          <article class="mt-[3.375rem] xl:mt-[4.375rem]">
+          <li class="mt-[3.375rem] xl:mt-[4.375rem]">
             <label class="checkbox-box flex gap-4 items-center">
               <input
                 formControlName="storage"
@@ -316,9 +329,9 @@
                 >
               </div>
             </label>
-          </article>
+          </li>
 
-          <article class="mt-[3.375rem] xl:mt-[4.375rem]">
+          <li class="mt-[3.375rem] xl:mt-[4.375rem]">
             <label class="checkbox-box flex gap-4 items-center">
               <input
                 formControlName="customProfile"
@@ -343,18 +356,21 @@
                 >
               </div>
             </label>
-          </article>
-        </div>
+          </li>
+        </ul>
       </section>
 
       <!-- Summary -->
-      <div *ngIf="currentStep === 4 && !lastPage" class="xl:min-w-[26.25rem]">
+      <section
+        *ngIf="currentStep === 4 && !lastPage"
+        class="xl:min-w-[26.25rem]"
+      >
         <h2 class="text-2xl font-bold mb-2 xl:text-3xl">Finishing up</h2>
         <p class="text-neutral-cool-gray mb-5 xl:mb-8">
           Double-check everything looks OK before confirming.
         </p>
 
-        <div
+        <article
           class="bg-neutral-alabaster py-5 px-4 text-sm rounded-lg xl:text-base"
         >
           <div class="flex justify-between items-center">
@@ -439,7 +455,7 @@
               </p>
             </li>
           </ul>
-        </div>
+        </article>
 
         <div class="flex justify-between items-center py-5 px-4">
           <h3 class="text-neutral-cool-gray text-sm xl:text-base">
@@ -450,10 +466,10 @@
             ${{ total }}/{{ billingPeriod === "monthly" ? "mo" : "yr" }}
           </p>
         </div>
-      </div>
+      </section>
 
       <!-- Thank you -->
-      <div
+      <section
         class="flex flex-col py-14 items-center text-center xl:mt-16"
         *ngIf="lastPage"
       >
@@ -468,9 +484,10 @@
           our platform. If you ever need support, please feel free to email us
           at support@loremgaming.com.
         </p>
-      </div>
+      </section>
 
-      <div
+      <!-- Nav -->
+      <nav
         *ngIf="!lastPage"
         class="fixed bottom-0 w-screen left-0 p-5 text-base flex justify-between bg-neutral-white xl:relative xl:p-0 xl:mb-5 xl:min-w-[28.125rem] xl:max-w-[28.125rem]"
         [ngClass]="{ 'flex-row-reverse': currentStep === 1 }"
@@ -499,7 +516,7 @@
         >
           Confirm
         </button>
-      </div>
+      </nav>
     </div>
   </form>
 </div>

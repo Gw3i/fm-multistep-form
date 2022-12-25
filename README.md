@@ -14,8 +14,6 @@ This is a solution to the [Multi-step form challenge on Frontend Mentor](https:/
   - [Continued development](#continued-development)
 - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -39,6 +37,17 @@ Users should be able to:
 
 ## My process
 
+1. Set up project with Angular CLI (Angular 14+)
+2. Install Tailwind and set up `tailwind.config``
+3. Write basic HTML for content structure
+4. Connect HTML form with Angular Forms
+5. Position content with Flex/Grid
+6. Add Stepper Component to navigate between form sections and add navigation
+7. Style each form section
+8. Add switch between monthly and yearly billing periods and render content accordingly
+9. Calculate total for monthly and yearly selection
+10. Add validation
+
 ### Built with
 
 - Semantic HTML5 markup
@@ -51,33 +60,56 @@ Users should be able to:
 
 ### What I learned
 
-Use this section to recap over some of your major learnings while working through this project. Writing these out and providing code samples of areas you want to highlight is a great way to reinforce your own knowledge.
-
-To see how you can add code snippets, see below:
+I' learned a lot how to style checkbox & radio inputs in a new way, which is not as easy as I thought.
+And how to create a form in Angular and navigate between form sections.
 
 ```html
-<h1>Some HTML code I'm proud of</h1>
+<div class="hidden xl:block">
+  <p class="text-sm text-neutral-cool-gray -mb-[0.25rem]">STEP {{ step }}</p>
+  <p class="font-medium text-neutral-magnolia">
+    {{ step === 1 ? "YOUR INFO" : step === 2 ? "SELECT PLAN" : step === 3 ?
+    "ADD-ONS" : "SUMMARY" }}
+  </p>
+</div>
 ```
 
-```css
-.proud-of-this-css {
-  color: papayawhip;
+```scss
+.checkbox-box input[type="checkbox"]:checked ~ div,
+.checkbox-box input[type="radio"]:checked ~ div {
+  background-color: hsl(231, 100%, 99%);
+  border: 0.063rem solid hsl(243, 100%, 62%);
+  border-radius: 0.5rem;
+  transition: none;
 }
 ```
 
 ```js
-const proudOfThisFunc = () => {
-  console.log("🎉");
-};
-```
+changePage(isNextPage: boolean) {
+    const addOns =
+      (this.form.get('onlineService')?.value && this.onlineService) +
+      (this.form.get('storage')?.value && this.storage) +
+      (this.form.get('customProfile')?.value && this.customProfile);
 
-**Note: Delete this note and the content within this section and replace with your own learnings.**
+    if (!isNextPage) {
+      return this.currentStep--;
+    } else {
+      if (this.currentStep === 3) {
+        if (this.form.get('plan')?.value === 'arcadePlan') {
+          this.total = this.arcadePlan + addOns;
+        } else if (this.form.get('plan')?.value === 'advanced') {
+          this.total = this.advancedPlan + addOns;
+        } else {
+          this.total = this.proPlan + addOns;
+        }
+      }
+      return this.currentStep++;
+    }
+  }
+```
 
 ### Continued development
 
-Use this section to outline areas that you want to continue focusing on in future projects. These could be concepts you're still not completely comfortable with or techniques you found useful that you want to refine and perfect.
-
-**Note: Delete this note and the content within this section and replace with your own plans for continued development.**
+In the future, I'll focus more on how to write clean code in Angular and get more comfortable with it.
 
 ## Author
 

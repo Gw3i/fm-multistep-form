@@ -109,7 +109,7 @@ changePage(isNextPage: boolean) {
 
 ### Continued development
 
-In the future, I'll focus more on how to write clean code in Angular and get more comfortable with it.
+In the future, I'll focus more on how to write clean code in Angular and get more comfortable with it. Practice, practice, practice ⚡️💪
 
 ## Author
 
